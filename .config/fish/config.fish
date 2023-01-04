@@ -4,5 +4,6 @@ if status is-interactive
 	alias py='python'
 	alias pip='python -m pip'
 	alias vim=nvim
-	export PYTHONSTARTUP=$HOME/.config/pythonstartup	
+	export PYTHONSTARTUP=$HOME/.config/pythonstartup
+	set PATH "$HOME/.local/bin:$PATH"
 end

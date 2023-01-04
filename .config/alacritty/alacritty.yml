@@ -13,13 +13,13 @@ colors:
   name: vscode (dark)
   author: senpai-10
   primary:
-    background: "#1E1E1E"
-    foreground: "#D4D4D4"
+    background: "#0b0e14"
+    foreground: "#90949d"
   cursor:
     text: "#1d1f21"
-    cursor: "#cccccc"
+    cursor: "#90949d"
   normal:
-    black: "#000000"
+    black: "#90949d"
     red: "#cd3131"
     green: "#0dbc79"
     yellow: "#e5e510"
@@ -36,6 +36,6 @@ colors:
     magenta: "#d670d6"
     cyan: "#29b8db"
     white: "#e5e5e5"
-    
+
 window:
   decorations: None

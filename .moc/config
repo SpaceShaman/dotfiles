@@ -1,1 +1,5 @@
 theme = green_theme
+MusicDir = /home/${USER}/Muzyka 
+Fastdir1 = /home/${USER}/Muzyka 
+Fastdir2 = /home/${USER}/Pobrane/torrent/pobrane
+Fastdir3 = /home/${USER}/Pobrane

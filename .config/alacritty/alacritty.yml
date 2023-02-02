@@ -10,8 +10,8 @@ font:
     y: 3
 
 colors:
-  name: vscode (dark)
-  author: senpai-10
+  name: SpaceShaman Dark
+  author: SpaceShaman
   primary:
     background: "#0b0e14"
     foreground: "#90949d"

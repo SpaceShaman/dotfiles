@@ -4,6 +4,7 @@ if status is-interactive
 	alias py='python'
 	alias pip='python -m pip'
 	alias vim=nvim
+	alias g=sgpt
 	alias commit='bash ~/.scripts/commit.sh'
 	alias release='bash ~/.scripts/release.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup

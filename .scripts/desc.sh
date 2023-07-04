@@ -1,3 +1,5 @@
+#!/bin/bash
+
 latest_tag=$(git tag | sort -V | tail -n 1)
 commit_range="$latest_tag..HEAD"
 

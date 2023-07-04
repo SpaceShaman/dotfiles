@@ -34,9 +34,15 @@ else
     exit 1
 fi
 
+latest_tag=$(git tag | sort -V | tail -n 1)
+commit_range="$latest_tag..HEAD"
+
+tag_description=$(git log --oneline --pretty=%s%n%b "$commit_range" | sgpt "Create version description according to the rules outlined in 'Keep a Changelog', return only a description of the changes without any additional information. ")
+
+
 git checkout master
 git merge develop
-git tag $new_version
+git tag $new_version -m "$tag_description"
 git push --all
 git push --tags
 git checkout develop

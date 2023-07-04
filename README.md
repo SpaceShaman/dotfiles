@@ -1,3 +1,3 @@
 # Dotfiles
 
-My dotfiles for my Arch Linux setup.
+My dotfiles for Ubuntu 22.04 LTS.

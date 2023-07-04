@@ -34,8 +34,9 @@ else
     exit 1
 fi
 
-# Do the rest of the commands
-git flow release start $new_version
-git flow release finish $new_version
+git checkout master
+git merge develop
+git tag $new_version
 git push --all
 git push --tags
+git checkout develop

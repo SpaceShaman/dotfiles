@@ -5,6 +5,7 @@ if status is-interactive
 	alias pip='python -m pip'
 	alias vim=nvim
 	alias commit='git add . && git diff --staged | sgpt "Generate git commit message, for my changes" | git commit -F - && git push --all'
+	alias release='bash ~/.scripts/release.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	set PATH "$HOME/.local/bin:$PATH"
 end

@@ -39,5 +39,3 @@ git flow release start $new_version
 git flow release finish $new_version
 git push --all
 git push --tags
-ssh krzysztofs@146.59.126.189 'cd ql_connect && git pull && docker-compose down && docker-compose build && docker-compose up -d'
-echo -e "\033[1;32mUpdate to the new version $new_version done.\033[0m"

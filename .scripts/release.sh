@@ -8,7 +8,6 @@ fi
 
 # Detect previous version
 last_version=$(git tag | sort -V | tail -n 1)
-echo "Last version: $last_version"
 major=$(echo $last_version | cut -d. -f1)
 minor=$(echo $last_version | cut -d. -f2)
 patch=$(echo $last_version | cut -d. -f3)
@@ -37,7 +36,7 @@ fi
 latest_tag=$(git tag | sort -V | tail -n 1)
 commit_range="$latest_tag..HEAD"
 
-tag_description=$(git log --oneline --pretty=%s%n%b "$commit_range" | sgpt "Create version description according to the rules outlined in 'Keep a Changelog', return only a description of the changes without any additional information. ")
+tag_description=$(git log --oneline --pretty=%s%n%b "$commit_range" | sgpt "Generate git new tag message, for my changes:\n\n")
 
 
 git checkout master
@@ -46,3 +45,7 @@ git tag $new_version -m "$tag_description"
 git push --all
 git push --tags
 git checkout develop
+
+echo "Last version: $last_version"
+echo "New version: $new_version"
+echo -e "Description:\n$tag_description"

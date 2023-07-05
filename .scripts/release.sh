@@ -33,19 +33,19 @@ else
     exit 1
 fi
 
-latest_tag=$(git tag | sort -V | tail -n 1)
-commit_range="$latest_tag..HEAD"
+# latest_tag=$(git tag | sort -V | tail -n 1)
+# commit_range="$latest_tag..HEAD"
 
-tag_description=$(git log --oneline --pretty=%s%n%b "$commit_range" | sgpt "Generate git new tag message, for my changes:\n\n")
-
+# tag_description=$(git log --oneline --pretty=%s%n%b "$commit_range" | sgpt "Generate git new tag message, for my changes:\n\n")
 
 git checkout master
 git merge develop
-git tag $new_version -m "$tag_description"
+# git tag $new_version -m "$tag_description"
+git tag $new_version
 git push --all
 git push --tags
 git checkout develop
 
 echo "Last version: $last_version"
 echo "New version: $new_version"
-echo -e "Description:\n$tag_description"
+# echo -e "Description:\n$tag_description"

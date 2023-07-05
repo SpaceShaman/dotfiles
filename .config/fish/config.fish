@@ -7,6 +7,7 @@ if status is-interactive
 	alias g=sgpt
 	alias commit='bash ~/.scripts/commit.sh'
 	alias release='bash ~/.scripts/release.sh'
+	alias update='bash ~/.scripts/update.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	set PATH "$HOME/.local/bin:$PATH"
 end

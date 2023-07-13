@@ -8,6 +8,7 @@ if status is-interactive
 	alias commit='bash ~/.scripts/commit.sh'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'
+	alias theme='bash ~/.scripts/theme.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	set PATH "$HOME/.local/bin:$PATH"
 end

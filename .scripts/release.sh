@@ -39,7 +39,7 @@ commit_range="$latest_tag..HEAD"
 touch .release
 git log --oneline --pretty=%s%n%b "$commit_range" | sgpt --model "gpt-4" "Generate git new tag message, for my changes:\n\n" > .release
 # vim .release
-sh -c vim .release
+sh -c nvim .release
 
 # git checkout master
 # git merge develop

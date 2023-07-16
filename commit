@@ -1,0 +1,11 @@
+The changes in the git repository include:
+
+1. The file `.config/fish/config.fish` has been deleted. This file contained various aliases and environment variables.
+
+2. A new file `.config/fish/fish_plugins` has been created. This file includes four fish plugins: `jorgebucaran/fisher`, `jethrokuan/z`, `jorgebucaran/autopair.fish`, and `ilancosman/tide@v5`.
+
+3. The file `.scripts/commit.sh` has been modified. The `sgpt` command in the script now uses the "gpt-4" model.
+
+4. A new empty file `commit` has been created.
+
+5. A new file `test.sh` has been created. This script creates a file named `commit`, adds all changes to the staging area, generates a commit message using the "gpt-4" model and saves it to the `commit` file, opens the `commit` file with `nano`, and then prints the commit message.

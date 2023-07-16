@@ -40,14 +40,14 @@ touch .release
 git log --oneline --pretty=%s%n%b "$commit_range" | sgpt --model "gpt-4" "Generate git new tag message, for my changes:\n\n" > .release
 vim .release
 
-git checkout master
-git merge develop
-git tag $new_version -F .release
-git push --all
-git push --tags
-git checkout develop
+# git checkout master
+# git merge develop
+# git tag $new_version -F .release
+# git push --all
+# git push --tags
+# git checkout develop
 
-rm .release
+# rm .release
 
-echo "Last version: $last_version"
-echo "New version: $new_version"
+# echo "Last version: $last_version"
+# echo "New version: $new_version"

@@ -10,6 +10,6 @@ if status is-interactive
 	alias update='bash ~/.scripts/update.sh'
 	alias theme='bash ~/.scripts/theme.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
-	export EDITOR=nano
+	export EDITOR=vim
 	set PATH "$HOME/.local/bin:$PATH"
 end

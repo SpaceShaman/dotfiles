@@ -42,5 +42,6 @@ git push --all
 git push --tags
 git checkout develop
 
-echo "Last version: $last_version"
-echo "New version: $new_version"
+echo -e "\033[1;32mRelease complete.\033[0m"
+echo -e "\033[1;33mPrevious version: $latest_tag\033[0m"
+echo -e "\033[1;34mNew version: $new_version\033[0m"

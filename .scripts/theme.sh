@@ -30,4 +30,5 @@ else
     echo "dark" > ~/.config/theme
     theme="dark"
 fi
-echo "Theme changed to: $theme"
+
+echo -e "\033[1;32mTheme changed to: $theme\033[0m"

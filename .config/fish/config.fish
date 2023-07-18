@@ -6,6 +6,9 @@ if status is-interactive
 	alias vim=nvim
 	alias g=sgpt
 	alias platon='nmcli dev wifi connect platon'
+	alias war='code ~/Dev/quadra/warehouse/warehouse.code-workspace'
+	alias hol='code ~/Dev/quadra/holidays/holidays.code-workspace'
+	alias con='code ~/Dev/quadra/ql_connect/ql_connect.code-workspace'
 	alias commit='bash ~/.scripts/commit.sh'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'

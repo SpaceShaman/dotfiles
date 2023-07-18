@@ -5,6 +5,7 @@ if status is-interactive
 	alias pip='python -m pip'
 	alias vim=nvim
 	alias g=sgpt
+	alias platon='nmcli dev wifi connect platon'
 	alias commit='bash ~/.scripts/commit.sh'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'

@@ -4,7 +4,6 @@ if status is-interactive
 	alias pip='python -m pip'
 	alias vim=nvim
 	alias g=sgpt
-	alias platon='nmcli dev wifi connect platon'
 	alias war='code ~/Dev/quadra/warehouse/warehouse.code-workspace'
 	alias hol='code ~/Dev/quadra/holidays/holidays.code-workspace'
 	alias con='code ~/Dev/quadra/ql_connect/ql_connect.code-workspace'
@@ -12,6 +11,7 @@ if status is-interactive
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'
 	alias theme='bash ~/.scripts/theme.sh'
+	alias wifi='bash ~/.scripts/wifi.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
 	set PATH "$HOME/.local/bin:$PATH"

@@ -6,7 +6,7 @@ app_name=$(basename $(pwd))
 if [ "$app_name" = "app" ]; then
     app_name=$(basename $(dirname $(pwd)))
 fi
-if [ "$app_name" != "holidays" ] && [ "$app_name" != "warehouse" ] && [ "$app_name" != "ql_connect" ]; then
+if [ "$app_name" != "holidays" ] && [ "$app_name" != "warehouse" ] && [ "$app_name" != "ql_connect" ] && [ "$app_name" != "analytics" ]; then
     echo -e "\033[1;31mYou are not in holidays, warehouse or ql_connect directory.\033[0m"
     exit 1
 fi

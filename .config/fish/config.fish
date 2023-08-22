@@ -16,4 +16,5 @@ if status is-interactive
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
 	set PATH "$HOME/.local/bin:$PATH"
+	export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app
 end

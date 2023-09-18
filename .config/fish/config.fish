@@ -1,8 +1,6 @@
 if status is-interactive
 	set fish_greeting
 	alias py='python'
-	alias pip='python -m pip'
-	alias vim=nvim
 	alias g=sgpt
 	alias c=oco
 	alias war='code ~/Dev/quadra/warehouse/warehouse.code-workspace'

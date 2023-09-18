@@ -4,6 +4,7 @@ if status is-interactive
 	alias pip='python -m pip'
 	alias vim=nvim
 	alias g=sgpt
+	alias c=oco
 	alias war='code ~/Dev/quadra/warehouse/warehouse.code-workspace'
 	alias hol='code ~/Dev/quadra/holidays/holidays.code-workspace'
 	alias con='code ~/Dev/quadra/ql_connect/ql_connect.code-workspace'

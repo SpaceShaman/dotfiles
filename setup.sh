@@ -11,11 +11,11 @@ update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
 update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 # Set neovim as default editor
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
+update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
+# Install pip packages
 pip install shell-gpt ptpython gnome-extensions-cli
 
 # Install gnome extensions

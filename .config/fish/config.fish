@@ -1,5 +1,6 @@
 if status is-interactive
 	set fish_greeting
+	set PATH "$HOME/.local/bin:$PATH"
 	alias py='python'
 	alias g=sgpt
 	alias c=oco
@@ -13,6 +14,5 @@ if status is-interactive
 	alias wifi='bash ~/.scripts/wifi.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
-	set PATH "$HOME/.local/bin:$PATH"
 	export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app
 end

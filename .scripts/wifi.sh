@@ -23,6 +23,7 @@ if [ $# -eq 2 ] && ([ $2 = "-f" ] || [ $2 = "--forget" ]); then
     exit 1
 fi
 
+nmcli dev disconnect wlo1
 while true; do
     if nmcli c show --active | grep -q "$1"; then
         echo -e "\033[1;32mConnected to $1\033[0m"

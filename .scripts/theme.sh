@@ -7,16 +7,12 @@ fi
 # get current theme
 theme=$(cat ~/.config/theme)
 
-
 # toggle theme
 if [ "$theme" = "dark" ]; then
     # change theme to light in alacritty
     sed -i 's/gruvbox_dark/gruvbox_light/' ~/.alacritty.toml
     # change theme to light in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Dark Medium"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
-    # change gnome theme to light
-    gsettings set org.gnome.desktop.interface color-scheme prefer-light
-    gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-olive'
 
     echo "light" > ~/.config/theme
     theme="light"
@@ -25,9 +21,6 @@ else
     sed -i 's/gruvbox_light/gruvbox_dark/' ~/.alacritty.toml
     # change theme to dark in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Gruvbox Dark Medium"/g' ~/.config/Code/User/settings.json
-    # change gnome theme to dark
-    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-    gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-olive-dark'
 
     echo "dark" > ~/.config/theme
     theme="dark"

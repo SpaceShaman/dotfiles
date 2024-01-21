@@ -2,8 +2,11 @@
 
 bash copy.sh
 
-apt-add-repository -y ppa:fish-shell/release-3 ppa:neovim-ppa/stable ppa:aslatter/ppa
 apt update && apt upgrade -y
+apt install -y software-properties-common
+apt-add-repository -y ppa:fish-shell/release-3 
+apt-add-repository -y ppa:neovim-ppa/stable
+apt-add-repository -y ppa:aslatter/ppa
 apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm
 
 bash python.sh 3.12
@@ -13,9 +16,6 @@ update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
-# Install fisher and plugins
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher update
 
 # Update nodejs and npm
 npm install -g n
@@ -25,3 +25,7 @@ npm install -g npm@latest
 
 # Install npm packages
 npm install -g opencommit
+
+# Install fisher and plugins
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+fisher update

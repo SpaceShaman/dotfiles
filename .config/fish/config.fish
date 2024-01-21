@@ -2,6 +2,7 @@ if status is-interactive
 	set fish_greeting
 	set PATH "$HOME/.local/bin:$PATH"
 	alias py='python'
+	alias pip='pip3'
 	alias g=sgpt
 	alias c=oco
 	alias release='bash ~/.scripts/release.sh'

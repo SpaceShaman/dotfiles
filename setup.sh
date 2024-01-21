@@ -2,8 +2,7 @@
 
 bash copy.sh
 
-apt-add-repository -y ppa:fish-shell/release-3
-add-apt-repository -y ppa:neovim-ppa/stable
+apt-add-repository -y ppa:fish-shell/release-3 ppa:neovim-ppa/stable ppa:aslatter/ppa
 apt update && apt upgrade -y
 apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm
 

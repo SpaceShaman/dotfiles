@@ -26,6 +26,6 @@ update-alternatives --install /usr/bin/python3 python3 /usr/bin/python$python_ve
 update-alternatives --install /usr/bin/python python /usr/bin/python$python_version 1
 
 # Install pip packages
-pip3 install --upgrade shell-gpt ptpython poetry prompt-toolkit
+python3.12 -m pip install --upgrade pip shell-gpt ptpython poetry prompt-toolkit
 
 echo -e "\033[1;32mPython $python_version installed.\033[0m"

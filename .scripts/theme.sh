@@ -7,6 +7,7 @@ fi
 # get current theme
 theme=$(cat ~/.config/theme)
 
+
 # toggle theme
 if [ "$theme" = "dark" ]; then
     # change theme to light in alacritty

@@ -19,13 +19,12 @@ apt install -y \
     python$python_version-gdbm \
     python$python_version-tk \
 
-python$python_version -m ensurepip --upgrade                                                                                                                           ✔ 
-
 # Set installed python as default
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python$python_version 1
 update-alternatives --install /usr/bin/python python /usr/bin/python$python_version 1
 
 # Install pip packages
-python3.12 -m pip install --upgrade pip shell-gpt ptpython poetry prompt-toolkit
+python$python_version -m ensurepip
+python$python_version -m pip install --upgrade pip shell-gpt ptpython poetry prompt-toolkit
 
 echo -e "\033[1;32mPython $python_version installed.\033[0m"

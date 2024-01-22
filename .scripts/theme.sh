@@ -23,7 +23,7 @@ else
     # change alacritty theme to dark
     sed -i 's/gruvbox_light/gruvbox_dark/' ~/.alacritty.toml
     # change rofi theme to dark
-    sed -i 's/gruvbox_light/gruvbox_dark/' ~/.config/rofi/config.rasi
+    sed -i 's/gruvbox-light/gruvbox-dark/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Gruvbox Dark Medium"/g' ~/.config/Code/User/settings.json
 

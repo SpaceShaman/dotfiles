@@ -25,6 +25,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 -- Widgets
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -226,18 +227,24 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         {             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            wibox.widget.textbox(' | '),
             brightness_widget {
                 type = 'icon_and_text',
                 program = 'light',
                 step = 2,
                 base = 50,
                 toltip = true,
-                percentage = true,
                 rmb_set_max = true,
             },
+            wibox.widget.textbox(' | '),
+            volume_widget {
+                widget_type = 'icon_and_text',
+                card = 0,
+            },
+            wibox.widget.textbox(' | '),
             battery_widget {
                 show_current_level = true,
                 margin_right = 4,
@@ -357,11 +364,13 @@ globalkeys = gears.table.join(
         { description = "code", group = "aplications" }),
     -- Brightness
     awful.key({}, "XF86MonBrightnessUp", function()
+            -- awful.spawn("bash /home/ton618/.scripts/brightness.sh +5")
             brightness_widget:inc()
         end,
         { description = "increase brightness", group = "brightness" }),
     awful.key({}, "XF86MonBrightnessDown", function()
             brightness_widget:dec()
+            -- awful.spawn("bash /home/ton618/.scripts/brightness.sh -5")
         end,
         { description = "decrease brightness", group = "brightness" }),
     -- Volume
@@ -591,3 +600,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("compton")
+-- Set brightness permission
+awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh")

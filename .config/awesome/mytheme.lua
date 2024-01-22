@@ -1,12 +1,12 @@
---------------------------------------------
--- My AwesomeWM theme inspired by gruvbox --
---------------------------------------------
-
+---------------------------
+-- Default awesome theme --
+---------------------------
 
 -- hard contrast background = = '#1d2021'
 local background = '#282828'
 -- soft contrast background = = '#32302f'
 local foreground = '#ebdbb2'
+
 -- Normal colors
 local black      = '#282828'
 local red        = '#cc241d'
@@ -16,6 +16,16 @@ local blue       = '#458588'
 local magenta    = '#b16286'
 local cyan       = '#689d6a'
 local white      = '#a89984'
+
+-- -- Bright colors
+-- local black      = '#928374'
+-- local red        = '#fb4934'
+-- local green      = '#b8bb26'
+-- local yellow     = '#fabd2f'
+-- local blue       = '#83a598'
+-- local magenta    = '#d3869b'
+-- local cyan       = '#8ec07c'
+-- local white      = '#ebdbb2'
 
 
 local theme_assets                              = require("beautiful.theme_assets")

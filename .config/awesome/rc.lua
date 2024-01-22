@@ -87,7 +87,7 @@ awful.layout.layouts = {
     awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
+    awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
@@ -266,12 +266,16 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey, }, "h", hotkeys_popup.show_help,
         { description = "show help", group = "awesome" }),
+    awful.key({ modkey, }, "Escape", function()
+            for s in screen do
+                s.mywibox.visible = not s.mywibox.visible
+            end
+        end,
+        { description = "toggle wibar", group = "awesome" }),
     awful.key({ modkey, }, "s", awful.tag.viewprev,
         { description = "view previous", group = "tag" }),
     awful.key({ modkey, }, "w", awful.tag.viewnext,
         { description = "view next", group = "tag" }),
-    awful.key({ modkey, }, "Escape", awful.tag.history.restore,
-        { description = "go back", group = "tag" }),
 
     awful.key({ modkey, }, "d",
         function()

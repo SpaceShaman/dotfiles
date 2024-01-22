@@ -23,8 +23,8 @@ local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Widgets
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -229,10 +229,20 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
-            volume_widget {
-                widget_type = 'horizontal_bar',
+            brightness_widget {
+                type = 'icon_and_text',
+                program = 'light',
+                step = 2,
+                base = 50,
+                toltip = true,
+                percentage = true,
+                rmb_set_max = true,
             },
-            battery_widget(),
+            battery_widget {
+                show_current_level = true,
+                margin_right = 4,
+                display_notification = true,
+            },
             s.mylayoutbox,
         },
     }
@@ -347,11 +357,11 @@ globalkeys = gears.table.join(
         { description = "code", group = "aplications" }),
     -- Brightness
     awful.key({}, "XF86MonBrightnessUp", function()
-            awful.spawn("bash /home/ton618/.scripts/brightness.sh +5")
+            brightness_widget:inc()
         end,
         { description = "increase brightness", group = "brightness" }),
     awful.key({}, "XF86MonBrightnessDown", function()
-            awful.spawn("bash /home/ton618/.scripts/brightness.sh -5")
+            brightness_widget:dec()
         end,
         { description = "decrease brightness", group = "brightness" }),
     -- Volume

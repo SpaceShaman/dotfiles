@@ -7,7 +7,7 @@ apt install -y software-properties-common
 apt-add-repository -y ppa:fish-shell/release-3 
 apt-add-repository -y ppa:neovim-ppa/stable
 apt-add-repository -y ppa:aslatter/ppa
-apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm compton
+apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm awesome compton
 
 bash python.sh 3.12
 
@@ -25,6 +25,5 @@ npm install -g npm@latest
 # Install npm packages
 npm install -g opencommit
 
-# Install fisher and plugins
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-fisher update
+# Install fisher plugins
+fish -c "fisher update"

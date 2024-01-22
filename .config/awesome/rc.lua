@@ -22,6 +22,10 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- Widgets
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -116,9 +120,6 @@ else
     })
 end
 
-
--- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
---                                      menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -228,6 +229,10 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            volume_widget {
+                widget_type = 'horizontal_bar',
+            },
+            battery_widget(),
             s.mylayoutbox,
         },
     }
@@ -348,7 +353,14 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86MonBrightnessDown", function()
             awful.spawn("bash /home/ton618/.scripts/brightness.sh -5")
         end,
-        { description = "decrease brightness", group = "brightness" })
+        { description = "decrease brightness", group = "brightness" }),
+    -- Volume
+    awful.key({}, "XF86AudioRaiseVolume", function() volume_widget.inc(5) end,
+        { description = "increase volume", group = "volume" }),
+    awful.key({}, "XF86AudioLowerVolume", function() volume_widget.dec(5) end,
+        { description = "decrease volume", group = "volume" }),
+    awful.key({}, "XF86AudioMute", function() volume_widget.toggle() end,
+        { description = "toggle mute", group = "volume" })
 )
 
 clientkeys = gears.table.join(
@@ -368,33 +380,6 @@ clientkeys = gears.table.join(
         { description = "move to next screen", group = "client" }),
     awful.key({ modkey, "Shift" }, "Right", function(c) c:move_to_screen() end,
         { description = "move to previous screen", group = "client" })
--- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
---           {description = "toggle keep on top", group = "client"})
--- awful.key({ modkey,           }, "n",
---     function (c)
---         -- The client currently has the input focus, so it cannot be
---         -- minimized, since minimized clients can't have the focus.
---         c.minimized = true
---     end ,
---     {description = "minimize", group = "client"}),
--- awful.key({ modkey,           }, "m",
---     function (c)
---         c.maximized = not c.maximized
---         c:raise()
---     end ,
---     {description = "(un)maximize", group = "client"}),
--- awful.key({ modkey, "Control" }, "m",
---     function (c)
---         c.maximized_vertical = not c.maximized_vertical
---         c:raise()
---     end ,
---     {description = "(un)maximize vertically", group = "client"}),
--- awful.key({ modkey, "Shift"   }, "m",
---     function (c)
---         c.maximized_horizontal = not c.maximized_horizontal
---         c:raise()
---     end ,
---     {description = "(un)maximize horizontally", group = "client"})
 )
 
 -- Bind all key numbers to tags.

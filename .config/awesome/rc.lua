@@ -290,9 +290,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey, "Shift" }, "Right",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey, "Control" }, "Right",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift" }, "Left",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey, "Control" }, "Left",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "Up",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -338,9 +338,9 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey, "Control" }, "Left",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift" }, "Left",      function (c) c:move_to_screen()               end,
               {description = "move to next screen", group = "client"}),
-    awful.key({ modkey, "Control"   }, "Right",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift"   }, "Right",      function (c) c:move_to_screen()               end,
               {description = "move to previous screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"})

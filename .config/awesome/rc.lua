@@ -23,9 +23,9 @@ local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Widgets
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local battery_widget = require("widgets.battery-widget.battery")
+local brightness_widget = require("widgets.brightness-widget.brightness")
+local volume_widget = require('widgets.volume-widget.volume')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -58,7 +58,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "mytheme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -207,9 +207,9 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        screen = s,
+        -- filter = awful.widget.tasklist.filter.currenttags,
+        -- buttons = tasklist_buttons
     }
 
     -- Create the wibox
@@ -220,15 +220,12 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
-            s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         {             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- mykeyboardlayout,
-            wibox.widget.systray(),
             mytextclock,
             wibox.widget.textbox(' | '),
             brightness_widget {
@@ -250,6 +247,7 @@ awful.screen.connect_for_each_screen(function(s)
                 margin_right = 4,
                 display_notification = true,
             },
+            wibox.widget.systray(),
             s.mylayoutbox,
         },
     }

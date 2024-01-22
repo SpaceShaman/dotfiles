@@ -12,6 +12,8 @@ theme=$(cat ~/.config/theme)
 if [ "$theme" = "dark" ]; then
     # change theme to light in alacritty
     sed -i 's/gruvbox_dark/gruvbox_light/' ~/.alacritty.toml
+    # change rofi theme to light
+    sed -i 's/gruvbox-dark/gruvbox-light/' ~/.config/rofi/config.rasi
     # change theme to light in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Dark Medium"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
 
@@ -20,6 +22,8 @@ if [ "$theme" = "dark" ]; then
 else
     # change alacritty theme to dark
     sed -i 's/gruvbox_light/gruvbox_dark/' ~/.alacritty.toml
+    # change rofi theme to dark
+    sed -i 's/gruvbox_light/gruvbox_dark/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Gruvbox Dark Medium"/g' ~/.config/Code/User/settings.json
 

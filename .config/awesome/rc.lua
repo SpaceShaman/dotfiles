@@ -322,7 +322,11 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey            }, "r", function ()
         awful.spawn("rofi -show run") end,
-              {description = "run prompt", group = "launcher"})
+              {description = "run prompt", group = "launcher"}),
+    -- Template
+    awful.key({ modkey,           }, "t", function () 
+        awful.spawn("bash /home/ton618/.scripts/theme.sh") end,
+              {description = "toggle theme", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -341,9 +345,9 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "Left",      function (c) c:move_to_screen()               end,
               {description = "move to next screen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "Right",      function (c) c:move_to_screen()               end,
-              {description = "move to previous screen", group = "client"}),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"})
+              {description = "move to previous screen", group = "client"})
+    -- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+    --           {description = "toggle keep on top", group = "client"})
     -- awful.key({ modkey,           }, "n",
     --     function (c)
     --         -- The client currently has the input focus, so it cannot be

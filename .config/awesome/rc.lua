@@ -398,7 +398,12 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioStop", function()
             awful.spawn("playerctl stop")
         end,
-        { description = "stop song", group = "songs" })
+        { description = "stop song", group = "songs" }),
+    -- Screenshots
+    awful.key({}, "Print", function()
+            awful.spawn("bash /home/ton618/.scripts/screenshot.sh")
+        end,
+        { description = "take screenshot", group = "screenshots" })
 )
 
 clientkeys = gears.table.join(

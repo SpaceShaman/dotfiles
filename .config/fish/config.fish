@@ -5,6 +5,9 @@ if status is-interactive
 	alias pip='pip3'
 	alias g=sgpt
 	alias c=oco
+	alias w=wifi
+	alias p=python
+	alias t='trans -b :en'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'
 	alias theme='bash ~/.scripts/theme.sh'

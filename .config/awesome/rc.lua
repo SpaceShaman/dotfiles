@@ -299,10 +299,14 @@ globalkeys = gears.table.join(
     ),
 
     -- Screen focus
-    awful.key({ modkey, }, "Right", function() awful.screen.focus_relative(1) end,
-        { description = "focus the next screen", group = "screen" }),
-    awful.key({ modkey, }, "Left", function() awful.screen.focus_relative(-1) end,
-        { description = "focus the previous screen", group = "screen" }),
+    awful.key({ modkey, }, "Right", function() awful.screen.focus_bydirection("right") end,
+        { description = "focus to the right screen", group = "screen" }),
+    awful.key({ modkey, }, "Left", function() awful.screen.focus_bydirection("left") end,
+        { description = "focus to the left screen", group = "screen" }),
+    awful.key({ modkey, }, "Up", function() awful.screen.focus_bydirection("up") end,
+        { description = "focus to the up screen", group = "screen" }),
+    awful.key({ modkey, }, "Down", function() awful.screen.focus_bydirection("down") end,
+        { description = "focus to the down screen", group = "screen" }),
 
 
     -- Layout manipulation
@@ -629,4 +633,4 @@ awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh"
 
 -- Setup displays
 awful.spawn.with_shell(
-    "xrandr --output HDMI-1 --mode 2560x1440 --rate 59.95 --primary --output eDP-1 --mode 1920x1080 --rate 60.16 --below HDMI-1")
+    "xrandr --output HDMI-1 --mode 2560x1440 --primary --output eDP-1 --mode 1920x1080 --below HDMI-1")

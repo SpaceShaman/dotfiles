@@ -1,12 +1,18 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
+    nmcli con show --active
+    exit 1
+fi
+
+if [ $1 = "-h" ] || [ $1 = "--help" ]; then
     echo -e "\033[1;31mUse: wifi <wifi name> to connect to a wifi network.\033[0m"
     echo -e "\033[1;31mUse: wifi -l or --list to list available wifi networks.\033[0m"
     echo -e "\033[1;31mUse: wifi -d or --disconnect to disconnect from wifi.\033[0m"
     echo -e "\033[1;31mUse: wifi <wifi name> -f or --forget to forget a wifi network.\033[0m"
     exit 1
 fi
+
 
 if [ $1 = "-l" ] || [ $1 = "--list" ]; then
     nmcli dev wifi list
@@ -30,7 +36,11 @@ while true; do
         break
     fi
 
-    nmcli dev wifi connect $1
+    if [ $# -eq 2 ]; then
+        nmcli dev wifi connect $1 password $2
+    else
+        nmcli dev wifi connect $1
+    fi
 
     sleep 1
 done

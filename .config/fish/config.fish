@@ -11,4 +11,5 @@ if status is-interactive
 	alias wifi='bash ~/.scripts/wifi.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
+	export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app
 end

@@ -623,5 +623,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("compton")
+
 -- Set brightness permission
 awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh")
+
+-- Setup displays
+awful.spawn.with_shell(
+    "xrandr --output HDMI-1 --mode 2560x1440 --rate 59.95 --primary --output eDP-1 --mode 1920x1080 --rate 60.16 --below HDMI-1")

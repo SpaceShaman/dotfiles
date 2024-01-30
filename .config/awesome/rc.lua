@@ -226,6 +226,8 @@ awful.screen.connect_for_each_screen(function(s)
         {             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- mykeyboardlayout,
+            -- wibox.widget.textbox(awful.screen.focused().output.name),
+            wibox.widget.textbox(' | '),
             mytextclock,
             wibox.widget.textbox(' | '),
             brightness_widget {
@@ -318,9 +320,9 @@ globalkeys = gears.table.join(
         { description = "increase the number of columns", group = "layout" }),
     awful.key({ modkey, "Control" }, "Down", function() awful.tag.incncol(-1, nil, true) end,
         { description = "decrease the number of columns", group = "layout" }),
-    awful.key({ modkey, "Shift" }, "Up", function() awful.tag.incnmaster(1, nil, true) end,
+    awful.key({ modkey, "Mod1" }, "Up", function() awful.tag.incnmaster(1, nil, true) end,
         { description = "increase the number of master clients", group = "layout" }),
-    awful.key({ modkey, "Shift" }, "Down", function() awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey, "Mod1" }, "Down", function() awful.tag.incnmaster(-1, nil, true) end,
         { description = "decrease the number of master clients", group = "layout" }),
     awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
         { description = "select next", group = "layout" }),
@@ -399,6 +401,34 @@ globalkeys = gears.table.join(
         { description = "take screenshot", group = "screenshots" })
 )
 
+
+function move_to_screen_by_direction(direction, c)
+    local screen_left = "DVI-I-2-2"
+    local screen_right = "DVI-I-1-1"
+    local screen_bottom = "eDP-1"
+
+    local current_screen = awful.screen.focused()
+    for k, v in pairs(current_screen.outputs) do
+        if direction == "left" then
+            if k == screen_right or k == screen_bottom then
+                c:move_to_screen(screen_left)
+            end
+        elseif direction == "right" then
+            if k == screen_left or k == screen_bottom then
+                c:move_to_screen(screen_right)
+            end
+        elseif direction == "up" then
+            if k == screen_bottom then
+                c:move_to_screen(screen_right)
+            end
+        elseif direction == "down" then
+            if k == screen_right or k == screen_left then
+                c:move_to_screen(screen_bottom)
+            end
+        end
+    end
+end
+
 clientkeys = gears.table.join(
     awful.key({ modkey, }, "f",
         function(c)
@@ -410,10 +440,24 @@ clientkeys = gears.table.join(
         { description = "close", group = "client" }),
     awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
         { description = "toggle floating", group = "client" }),
-    awful.key({ modkey, "Shift" }, "Left", function(c) c:move_to_screen(awful.screen.focused().index - 1) end,
-        { description = "move to previous screen", group = "client" }),
-    awful.key({ modkey, "Shift" }, "Right", function(c) c:move_to_screen() end,
-        { description = "move to next screen", group = "client" }),
+    -- Move client to screen
+    awful.key({ modkey, "Shift" }, "Left", function(c)
+            move_to_screen_by_direction("left", c)
+        end,
+        { description = "move to the left screen", group = "client" }),
+    awful.key({ modkey, "Shift" }, "Right", function(c)
+            move_to_screen_by_direction("right", c)
+        end,
+        { description = "move to the right screen", group = "client" }),
+    awful.key({ modkey, "Shift" }, "Up", function(c)
+            move_to_screen_by_direction("up", c)
+        end,
+        { description = "move to the up screen", group = "client" }),
+    awful.key({ modkey, "Shift" }, "Down", function(c)
+            move_to_screen_by_direction("down", c)
+        end,
+        { description = "move to the down screen", group = "client" }),
+    -- Swap clients
     awful.key({ modkey, "Shift" }, "d", function() awful.client.swap.byidx(1) end,
         { description = "swap with next client by index", group = "client" }),
     awful.key({ modkey, "Shift" }, "a", function() awful.client.swap.byidx(-1) end,

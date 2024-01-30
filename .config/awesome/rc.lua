@@ -226,8 +226,6 @@ awful.screen.connect_for_each_screen(function(s)
         {             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- mykeyboardlayout,
-            -- wibox.widget.textbox(awful.screen.focused().output.name),
-            wibox.widget.textbox(' | '),
             mytextclock,
             wibox.widget.textbox(' | '),
             brightness_widget {

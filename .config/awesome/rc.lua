@@ -401,8 +401,8 @@ globalkeys = gears.table.join(
 
 
 function move_to_screen_by_direction(direction, c)
-    local screen_left = "DVI-I-2-2"
-    local screen_right = "DVI-I-1-1"
+    local screen_left = "DVI-I-1-1"
+    local screen_right = "DVI-I-2-2"
     local screen_bottom = "eDP-1"
 
     local current_screen = awful.screen.focused()
@@ -684,4 +684,4 @@ awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh"
 
 -- Setup displays
 awful.spawn.with_shell(
-    "xrandr --output DVI-I-2-2 --mode 2560x1440 --rate 144.01 --left-of DVI-I-1-1 --output DVI-I-1-1 --mode 2560x1440 --rate 144.00 --primary --output eDP-1 --mode 1920x1080 --rate 60.16 --below DVI-I-1-1")
+    "xrandr --output DVI-I-1-1 --mode 2560x1440 --rate 144.00 --left-of DVI-I-2-2 --output DVI-I-2-2 --mode 2560x1440 --rate 144.01 --primary --output eDP-1 --mode 1920x1080 --rate 60.16 --below DVI-I-2-2")

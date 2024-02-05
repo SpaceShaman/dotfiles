@@ -8,10 +8,12 @@ if status is-interactive
 	alias w=wifi
 	alias p=python
 	alias t='trans -b :en'
+	alias r='rotate'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'
 	alias theme='bash ~/.scripts/theme.sh'
 	alias wifi='bash ~/.scripts/wifi.sh'
+	alias rotate='bash ~/.scripts/rotate.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
 	export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app

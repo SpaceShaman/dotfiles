@@ -467,7 +467,15 @@ clientkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        { description = "go back", group = "client" })
+        { description = "go back", group = "client" }),
+    awful.key({ modkey, "Shift" }, "m",
+        function(c)
+            c.maximized = false
+            c.maximized_vertical = false
+            c.maximized_horizontal = false
+            c:raise()
+        end,
+        { description = "demaximize", group = "client" })
 )
 
 -- Bind all key numbers to tags.

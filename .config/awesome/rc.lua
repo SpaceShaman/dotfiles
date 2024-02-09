@@ -692,7 +692,7 @@ awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh"
 
 -- Setup displays
 awful.spawn.with_shell(
-    "xrandr --output DVI-I-1-1 --mode 2560x1440 --rate 120.00 --primary --output DVI-I-2-2 --mode 2560x1440 --rate 120.00 --left-of DVI-I-1-1 --output eDP-1 --mode 1920x1080 --rate 60.16 --below DVI-I-1-1")
+    "bash /home/ton618/.scripts/screen_left.sh")
 
 -- Prevent screen from turning off
 awful.spawn.with_shell("xset s off -dpms && xset s noblank")

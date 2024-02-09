@@ -694,5 +694,5 @@ awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh"
 awful.spawn.with_shell(
     "bash /home/ton618/.scripts/screen_left.sh")
 
--- Prevent screen from turning off
-awful.spawn.with_shell("xset s off -dpms && xset s noblank")
+-- Set screen auto off time to 5 minutes
+awful.spawn.with_shell("xset +dpms && xset s on && xset s 300")

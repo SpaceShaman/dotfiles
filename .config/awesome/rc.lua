@@ -186,7 +186,14 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+    local layout = awful.layout.suit.tile
+    for k, v in pairs(s.outputs) do
+        if k == "DVI-I-2-2" then
+            layout = awful.layout.suit.tile.bottom
+        end
+    end
+    awful.tag(tags, s, layout)
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()

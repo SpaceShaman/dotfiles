@@ -18,5 +18,5 @@ if status is-interactive
 	alias screen_auto_off='bash ~/.scripts/screen_auto_off.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
-	export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app
+	# export PYTHONPATH=$HOME/Dev/quadra/ql_connect/app
 end

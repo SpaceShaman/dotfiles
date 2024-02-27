@@ -360,6 +360,10 @@ globalkeys = gears.table.join(
             awful.spawn("code")
         end,
         { description = "code", group = "aplications" }),
+    awful.key({ modkey, }, "o", function()
+            awful.spawn("obsidian")
+        end,
+        { description = "obsidian", group = "aplications" }),
 
     -- Brightness
     awful.key({}, "XF86MonBrightnessUp", function()

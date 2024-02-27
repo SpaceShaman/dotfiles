@@ -614,20 +614,8 @@ awful.rules.rules = {
         rule_any = { type = { "normal", "dialog" }
         },
         properties = { titlebars_enabled = false }
-    },
+    }
 
-    -- Open on specific tag and screen
-    {
-        rule = { class = "Spotify" },
-        properties = { screen = "eDP-1", tag = "1", switchtotag = true },
-        callback = function(c)
-            awful.spawn.with_shell("playerctl play-pause");
-        end
-    },
-    {
-        rule = { class = "Signal" },
-        properties = { screen = "eDP-1", tag = "2", switchtotag = true },
-    },
 }
 -- }}}
 

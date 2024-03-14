@@ -23,7 +23,7 @@ n prune
 npm install -g npm@latest
 
 # Install npm packages
-npm install -g opencommit
+npm install -g opencommit typescript prettier prettier-eslint @typescript-eslint/parser vue-eslint-parser
 
 # Install fisher plugins
 fish -c "fisher update"

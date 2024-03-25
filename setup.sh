@@ -23,7 +23,10 @@ n prune
 npm install -g npm@latest
 
 # Install npm packages
-npm install -g opencommit typescript prettier prettier-eslint @typescript-eslint/parser vue-eslint-parser
+npm install -g opencommit
 
 # Install fisher plugins
 fish -c "fisher update"
+
+# Set hotkey for emoji panel to prevent conflict with vscode hotkeys
+gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Control>semicolon']" 

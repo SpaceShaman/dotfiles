@@ -10,6 +10,8 @@ theme=$(cat ~/.config/theme)
 
 # toggle theme
 if [ "$theme" = "dark" ]; then
+    # change system theme to light
+    gsettings set org.gnome.desktop.interface color-scheme 'default'
     # change theme to light in alacritty
     sed -i 's/gruvbox_dark/gruvbox_light/' ~/.alacritty.toml
     # change rofi theme to light
@@ -23,6 +25,8 @@ if [ "$theme" = "dark" ]; then
     echo "light" > ~/.config/theme
     theme="light"
 else
+    # change system theme to dark
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     # change alacritty theme to dark
     sed -i 's/gruvbox_light/gruvbox_dark/' ~/.alacritty.toml
     # change rofi theme to dark

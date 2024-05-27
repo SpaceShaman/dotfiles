@@ -240,7 +240,7 @@ awful.screen.connect_for_each_screen(function(s)
                 program = 'light',
                 step = 2,
                 base = 50,
-                toltip = true,
+                timeout = 1,
                 rmb_set_max = true,
             },
             wibox.widget.textbox(' | '),

@@ -26,6 +26,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -181,6 +182,15 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+-- Calendar widget
+local mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    placement = 'top_right'
+})
+mytextclock:connect_signal("button::press", function(_, _, _, button)
+    if button == 3 then cw.toggle() end
+end)
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
@@ -215,8 +225,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen = s,
-        -- filter = awful.widget.tasklist.filter.currenttags,
-        -- buttons = tasklist_buttons
+        filter = awful.widget.tasklist.filter.currenttags,
+        buttons = tasklist_buttons
     }
 
     -- Create the wibox

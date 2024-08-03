@@ -16,12 +16,12 @@
   // Moving editor //
   ///////////////////
   {
-    "key": "ctrl+alt+down",
-    "command": "workbench.action.moveEditorToBelowGroup"
-  },
-  {
     "key": "ctrl+alt+up",
     "command": "workbench.action.moveEditorToAboveGroup"
+  },
+  {
+    "key": "ctrl+alt+down",
+    "command": "workbench.action.moveEditorToBelowGroup"
   },
   {
     "key": "ctrl+alt+left",
@@ -32,16 +32,16 @@
     "command": "workbench.action.moveEditorToRightGroup"
   },
   {
-    "key": "ctrl+alt+right",
-    "command": "-workbench.action.moveEditorToNextGroup"
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.moveEditorToNewWindow"
   },
   {
     "key": "ctrl+alt+left",
     "command": "-workbench.action.moveEditorToPreviousGroup"
   },
   {
-    "key": "ctrl+alt+n",
-    "command": "workbench.action.moveEditorToNewWindow"
+    "key": "ctrl+alt+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
   },
   /////////////////////
   // Resizing editor //
@@ -72,7 +72,7 @@
   {
     "key": "ctrl+g",
     "command": "workbench.action.closeSidebar",
-    "when": "sideBarVisible"
+    "when": "view.workbench.scm.visible"
   },
   {
     "key": "ctrl+e",
@@ -81,7 +81,7 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.closeSidebar",
-    "when": "sideBarVisible"
+    "when": "explorerViewletVisible"
   },
   {
     "key": "ctrl+t",
@@ -95,7 +95,7 @@
   {
     "key": "ctrl+shift+d",
     "command": "workbench.action.closeSidebar",
-    "when": "sideBarVisible"
+    "when": "activeViewlet == 'workbench.view.debug'"
   },
   //////////////
   // Terminal //

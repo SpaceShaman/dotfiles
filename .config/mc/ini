@@ -4,7 +4,7 @@ shell_patterns=true
 auto_save_setup=true
 preallocate_space=false
 auto_menu=false
-use_internal_view=true
+use_internal_view=false
 use_internal_edit=false
 clear_before_exec=true
 confirm_delete=true
@@ -136,7 +136,7 @@ mouse_move_pages=true
 filetype_mode=true
 permission_mode=false
 torben_fj_mode=false
-quick_search_mode=2
+quick_search_mode=0
 select_flags=6
 
 simple_swap=false

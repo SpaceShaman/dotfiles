@@ -1,0 +1,111 @@
+[
+  /////////////////
+  // File editor //
+  /////////////////
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  ///////////////////
+  // Moving editor //
+  ///////////////////
+  {
+    "key": "ctrl+alt+down",
+    "command": "workbench.action.moveEditorToBelowGroup"
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "workbench.action.moveEditorToAboveGroup"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.moveEditorToLeftGroup"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.moveEditorToRightGroup"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "-workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.moveEditorToNewWindow"
+  },
+  /////////////////////
+  // Resizing editor //
+  /////////////////////
+  {
+    "key": "ctrl+shift+=",
+    "command": "workbench.action.increaseViewHeight"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.decreaseViewHeight"
+  },
+  {
+    "key": "ctrl+alt+=",
+    "command": "workbench.action.increaseViewWidth"
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "workbench.action.decreaseViewWidth"
+  },
+  ///////////////////
+  // Left Sidebar //
+  ///////////////////
+  {
+    "key": "ctrl+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.explorer.fileView.focus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.view.testing.focus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible"
+  },
+  //////////////
+  // Terminal //
+  //////////////
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  }
+  ///////////
+  // Other //
+  ///////////
+]

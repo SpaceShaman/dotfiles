@@ -1,0 +1,192 @@
+{
+  "editor.suggestSelection": "first",
+  "workbench.startupEditor": "newUntitledFile",
+  "python.languageServer": "Pylance",
+  "python.globalModuleInstallation": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "git.autofetch": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)",
+    "django-html"
+  ],
+  "editor.formatOnSave": true,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.07)",
+    "rgba(127,255,127,0.07)",
+    "rgba(255,127,255,0.07)",
+    "rgba(79,236,236,0.07)"
+  ],
+  "indentRainbow.ignoreErrorLanguages": ["python"],
+  "indentRainbow.colorOnWhiteSpaceOnly": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.testing.pytestEnabled": true,
+  "python.analysis.exclude": [
+    "**/migrations/*.py",
+    "**/tests/",
+    "**/node_modules/"
+  ],
+  "python.analysis.completeFunctionParens": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "zenMode.centerLayout": false,
+  "editor.inlineSuggest.enabled": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true
+  },
+  "search.showLineNumbers": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "sourcery.token": "user_kiWEfK5FxShwgM_Y65nrx0hSvR06o0TQWSkfogoHnUDy2Hvg5cnJnlyFkVc",
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  },
+  "yaml.customTags": [
+    "!ENV scalar",
+    "!ENV sequence",
+    "!relative scalar",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+  ],
+  "python.analysis.addImport.exactMatchOnly": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.diagnostics.sourceMapsEnabled": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "flake8.args": ["--ignore=E501,E203,W503,E704"],
+  "python.analysis.diagnosticMode": "workspace",
+  "isort.check": true,
+  "python.analysis.enableSyncServer": true,
+  "glsl-canvas.refreshOnChange": false,
+  "[glsl]": {
+    "editor.defaultFormatter": "raczzalan.webgl-glsl-editor"
+  },
+  "[frag]": {
+    "editor.defaultFormatter": "raczzalan.webgl-glsl-editor"
+  },
+  "[vert]": {
+    "editor.defaultFormatter": "raczzalan.webgl-glsl-editor"
+  },
+  "isort.importStrategy": "fromEnvironment",
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "workbench.colorTheme": "Gruvbox Light Medium",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "gitlens.launchpad.indicator.enabled": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "python.analysis.useImportHeuristic": true,
+  "python.analysis.extraPaths": ["app"],
+  "github.copilot.chat.localeOverride": "pl",
+  "github.copilot.chat.welcomeMessage": "never",
+  "zenMode.showTabs": "none",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.fullScreen": false,
+  "testing.coverageToolbarEnabled": true,
+  "window.density.editorTabHeight": "compact",
+  "zenMode.restore": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.activityBar.location": "hidden",
+  "window.menuBarVisibility": "toggle",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  }
+}

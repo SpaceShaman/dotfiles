@@ -699,9 +699,9 @@ awful.spawn.with_shell("compton")
 -- Set brightness permission
 awful.spawn.with_shell("bash /home/ton618/.scripts/set_brightness_permission.sh")
 
--- Setup displays
-awful.spawn.with_shell(
-    "bash /home/ton618/.scripts/screen_left.sh")
 
 -- Set screen auto off time to 5 minutes
 awful.spawn.with_shell("xset +dpms && xset s on && xset s 300")
+
+-- Setup displays
+awful.spawn.with_shell("bash /home/ton618/.scripts/screen.sh -r")

@@ -11,7 +11,7 @@ if [ "$app_name" != "holidays" ] && [ "$app_name" != "warehouse" ] && [ "$app_na
     exit 1
 fi
 
-if [ "$app_name" != "connect" ]; then
+if [ "$app_name" = "connect" ]; then
     ssh krzysztofs@146.59.126.189 "cd core/connect && git pull && cd .. && docker-compose down connect && docker-compose build connect && docker-compose up -d connect"
 else
     ssh krzysztofs@146.59.126.189 "cd $app_name && git pull && docker-compose down && docker-compose build && docker-compose up -d"

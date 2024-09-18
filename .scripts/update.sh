@@ -16,4 +16,5 @@ if [ "$app_name" = "connect" ] || [ "$app_name" = "frontend" ]; then
 else
     ssh krzysztofs@146.59.126.189 "cd $app_name && git pull && docker-compose down && docker-compose build && docker-compose up -d"
 fi
+docker system prune -f
 echo -e "\033[1;32mUpdate to the new version done.\033[0m"

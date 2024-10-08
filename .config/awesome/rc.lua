@@ -370,6 +370,10 @@ globalkeys = gears.table.join(
             awful.spawn("code")
         end,
         { description = "code", group = "aplications" }),
+    awful.key({ modkey, }, "p", function()
+            awful.spawn("code /home/ton618/Dev/quadra/core/core.code-workspace")
+        end,
+        { description = "Quadra Core", group = "workspace" }),
     awful.key({ modkey, }, "o", function()
             awful.spawn("obsidian")
         end,

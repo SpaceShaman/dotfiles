@@ -12,4 +12,6 @@ curl https://pyenv.run | bash
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 
-echo -e "\033[1;32mPyenv installed successfully!\033[0m"
+curl -sSL https://install.python-poetry.org | python3 -
+
+echo -e "\033[1;32mPyenv and Poetry installed.\033[0m"

@@ -7,6 +7,7 @@ if status is-interactive
 	alias p=python
 	alias t='trans -b :en'
 	alias s='screen'
+	alias co='code .; exit'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'
 	alias theme='bash ~/.scripts/theme.sh'

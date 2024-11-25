@@ -13,11 +13,11 @@ if [ "$theme" = "dark" ]; then
     # change system theme to light
     gsettings set org.gnome.desktop.interface color-scheme 'default'
     # change theme to light in alacritty
-    sed -i 's/gruvbox_dark/gruvbox_light/' ~/.alacritty.toml
+    sed -i 's/dark/light/' ~/.alacritty.toml
     # change rofi theme to light
     sed -i 's/gruvbox-dark/gruvbox-light/' ~/.config/rofi/config.rasi
     # change theme to light in vscode
-    sed -i 's/"workbench.colorTheme": "Black"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
+    sed -i 's/"workbench.colorTheme": "Pitch Black"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
     # change theme to light in awesome
     sed -i 's/gruvbox_dark/gruvbox_light/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'
@@ -28,11 +28,11 @@ else
     # change system theme to dark
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     # change alacritty theme to dark
-    sed -i 's/gruvbox_light/gruvbox_dark/' ~/.alacritty.toml
+    sed -i 's/light/dark/' ~/.alacritty.toml
     # change rofi theme to dark
     sed -i 's/gruvbox-light/gruvbox-dark/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode
-    sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Black"/g' ~/.config/Code/User/settings.json
+    sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Pitch Black"/g' ~/.config/Code/User/settings.json
     # change theme to dark in awesome
     sed -i 's/gruvbox_light/gruvbox_dark/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'

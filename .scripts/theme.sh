@@ -15,7 +15,7 @@ if [ "$theme" = "dark" ]; then
     # change theme to light in alacritty
     sed -i 's/dark/light/' ~/.alacritty.toml
     # change rofi theme to light
-    sed -i 's/gruvbox-dark/gruvbox-light/' ~/.config/rofi/config.rasi
+    sed -i 's/dark/light/' ~/.config/rofi/config.rasi
     # change theme to light in vscode
     sed -i 's/"workbench.colorTheme": "Pitch Black"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
     # change theme to light in awesome
@@ -30,7 +30,7 @@ else
     # change alacritty theme to dark
     sed -i 's/light/dark/' ~/.alacritty.toml
     # change rofi theme to dark
-    sed -i 's/gruvbox-light/gruvbox-dark/' ~/.config/rofi/config.rasi
+    sed -i 's/light/dark/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Pitch Black"/g' ~/.config/Code/User/settings.json
     # change theme to dark in awesome

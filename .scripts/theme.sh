@@ -19,7 +19,7 @@ if [ "$theme" = "dark" ]; then
     # change theme to light in vscode
     sed -i 's/"workbench.colorTheme": "Pitch Black"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
     # change theme to light in awesome
-    sed -i 's/gruvbox_dark/gruvbox_light/' ~/.config/awesome/rc.lua
+    sed -i 's/dark.lua/light.lua/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'
 
     echo "light" > ~/.config/theme
@@ -34,7 +34,7 @@ else
     # change theme to dark in vscode
     sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Pitch Black"/g' ~/.config/Code/User/settings.json
     # change theme to dark in awesome
-    sed -i 's/gruvbox_light/gruvbox_dark/' ~/.config/awesome/rc.lua
+    sed -i 's/light.lua/dark.lua/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'
 
     echo "dark" > ~/.config/theme

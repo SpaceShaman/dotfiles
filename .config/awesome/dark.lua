@@ -2,13 +2,11 @@
 -- Gruvbox Dark Theme --
 ------------------------
 
--- hard contrast background = = '#1d2021'
-local background = '#282828'
--- soft contrast background = = '#32302f'
+local background = '#000000'
 local foreground = '#ebdbb2'
 
 -- Normal colors
-local black      = '#282828'
+local black      = '#000000'
 local red        = '#cc241d'
 local green      = '#98971a'
 local yellow     = '#d79921'

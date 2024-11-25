@@ -38,7 +38,7 @@ theme.fg_focus                                  = green
 theme.fg_urgent                                 = green
 theme.fg_minimize                               = foreground
 
-theme.useless_gap                               = dpi(3)
+theme.useless_gap                               = dpi(0)
 theme.border_width                              = dpi(1)
 theme.border_normal                             = background
 theme.border_focus                              = foreground

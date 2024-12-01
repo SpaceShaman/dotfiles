@@ -1,14 +1,6 @@
-/* ==========================================================================
-   File: gruvbox-common.rasi
-   Desc: Shared rules between all gruvbox themes
-   Author: bardisty <b@bah.im>
-   Source: https://github.com/bardisty/gruvbox-rofi
-   Modified: Mon Feb 12 2018 06:06:47 PST -0800
-   ========================================================================== */
-
 window {
     background-color: @background;
-    border:           2;
+    border:           1;
     padding:          2;
 }
 
@@ -18,7 +10,7 @@ mainbox {
 }
 
 message {
-    border:       2px 0 0;
+    border:       1px 0 0;
     border-color: @separatorcolor;
     padding:      1px;
 }
@@ -29,16 +21,16 @@ textbox {
 }
 
 listview {
-    border:       2px solid 0 0;
-    padding:      2px 0 0;
+    border:       1px solid 0 0;
+    padding:      1px 0 0;
     border-color: @separatorcolor;
-    spacing:      2px;
+    spacing:      1px;
     scrollbar:    @scrollbar;
 }
 
 element {
     border:  0;
-    padding: 2px;
+    padding: 1px;
 }
 
 element.normal.normal {
@@ -95,7 +87,7 @@ scrollbar {
 }
 
 mode-switcher {
-    border:       2px 0 0;
+    border:       1px 0 0;
     border-color: @separatorcolor;
 }
 

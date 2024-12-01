@@ -1,37 +1,24 @@
-html {
-  --global__kdb__backgroundcolor: #000;
-  --global__dragndrop__backgroundcolor: #000;
-  --chatview__backgroundcolor: #000;
-  --chatview__composer__backgroundcolor: #000;
-  --contextmenu__backgroundcolor: #000;
-  --contextmenu__item_hover__backgroundcolor: #000;
-  --contextmenu__fontcolor: #fff;
-  --contextmenu__item_hover__fontcolor: #fff;
-  --contextmenu__bordercolor: #000;
-  --global__kdb__backgroundcolor: #000;
-  --global__dragndrop__backgroundcolor: #000;
-}
 :root {
   --primary-color: #000;
-  --title-bar-bg: var(
-    --primary-color
-  ); /* the background of the title bar with window actions on it */
-  --left-panel-bg: var(
-    --primary-color
-  ); /* the background of the list of chats on the left */
-  --chat-header-bg: var(
-    --primary-color
-  ); /* the background of the current chat's header */
-  --chat-panel-bg: var(
-    --primary-color
-  ); /* the background of the current chat */
-  --dialog-bg: var(--primary-color); /* the background of dialogs */
-  --left-panel-v2-bg-no-transparency--windows: var(
-    --primary-color
-  ); /* variable that controls bg of source list on the very left of new layout */
-  --left-panel-bg-no-transparency: var(
-    --primary-color
-  ); /* variable that controls bg of source list on the very left of new layout */
+  --title-bar-bg: var(--primary-color);
+  --left-panel-bg: var(--primary-color);
+  --chat-header-bg: var(--primary-color);
+  --chat-panel-bg: var(--primary-color);
+  --dialog-bg: var(--primary-color);
+  --left-panel-v2-bg-no-transparency--windows: var(--primary-color);
+  --left-panel-bg-no-transparency: var(--primary-color);
+  --global__kdb__backgroundcolor: var(--primary-color);
+  --global__dragndrop__backgroundcolor: var(--primary-color);
+  --chatview__backgroundcolor: var(--primary-color);
+  --chatview__composer__backgroundcolor: var(--primary-color);
+  --contextmenu__backgroundcolor: var(--primary-color);
+  --contextmenu__item_hover__backgroundcolor: var(--primary-color);
+  --contextmenu__bordercolor: var(--primary-color);
+  --global__kdb__backgroundcolor: var(--primary-color);
+  --global__dragndrop__backgroundcolor: var(--primary-color);
+}
+html[theme="light"] {
+  --primary-color: #fcfcfc;
 }
 
 /* Makes the input for custom CSS in Beeper preferences larger in order to make editing easier */

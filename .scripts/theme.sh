@@ -17,7 +17,7 @@ if [ "$theme" = "dark" ]; then
     # change rofi theme to light
     sed -i 's/dark/light/' ~/.config/rofi/config.rasi
     # change theme to light in vscode
-    sed -i 's/"workbench.colorTheme": "Pitch Black"/"workbench.colorTheme": "Gruvbox Light Medium"/g' ~/.config/Code/User/settings.json
+    sed -i 's/"workbench.colorTheme": "Ayu Dark"/"workbench.colorTheme": "Ayu Light"/g' ~/.config/Code/User/settings.json
     # change theme to light in awesome
     sed -i 's/dark.lua/light.lua/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'
@@ -32,7 +32,7 @@ else
     # change rofi theme to dark
     sed -i 's/light/dark/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode
-    sed -i 's/"workbench.colorTheme": "Gruvbox Light Medium"/"workbench.colorTheme": "Pitch Black"/g' ~/.config/Code/User/settings.json
+    sed -i 's/"workbench.colorTheme": "Ayu Light"/"workbench.colorTheme": "Ayu Dark"/g' ~/.config/Code/User/settings.json
     # change theme to dark in awesome
     sed -i 's/light.lua/dark.lua/' ~/.config/awesome/rc.lua
     awesome-client 'awesome.restart()'

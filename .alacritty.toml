@@ -6,11 +6,11 @@ general.import = [
 size = 16
 
 [font.normal]
-family = "CodeNewRoman NF"
+family = "Hack Nerd Font Propo"
 
 [window]
 decorations = "none"
 dynamic_padding = true
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = true 

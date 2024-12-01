@@ -1,0 +1,98 @@
+html {
+  --global__kdb__backgroundcolor: #000;
+  --global__dragndrop__backgroundcolor: #000;
+  --chatview__backgroundcolor: #000;
+  --chatview__composer__backgroundcolor: #000;
+  --contextmenu__backgroundcolor: #000;
+  --contextmenu__item_hover__backgroundcolor: #000;
+  --contextmenu__fontcolor: #fff;
+  --contextmenu__item_hover__fontcolor: #fff;
+  --contextmenu__bordercolor: #000;
+  --global__kdb__backgroundcolor: #000;
+  --global__dragndrop__backgroundcolor: #000;
+}
+:root {
+  --primary-color: #000;
+  --title-bar-bg: var(
+    --primary-color
+  ); /* the background of the title bar with window actions on it */
+  --left-panel-bg: var(
+    --primary-color
+  ); /* the background of the list of chats on the left */
+  --chat-header-bg: var(
+    --primary-color
+  ); /* the background of the current chat's header */
+  --chat-panel-bg: var(
+    --primary-color
+  ); /* the background of the current chat */
+  --dialog-bg: var(--primary-color); /* the background of dialogs */
+  --left-panel-v2-bg-no-transparency--windows: var(
+    --primary-color
+  ); /* variable that controls bg of source list on the very left of new layout */
+  --left-panel-bg-no-transparency: var(
+    --primary-color
+  ); /* variable that controls bg of source list on the very left of new layout */
+}
+
+/* Makes the input for custom CSS in Beeper preferences larger in order to make editing easier */
+.mx_AppearanceUserSettingsTab .mx_Field.mx_Field_textarea {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+/* title bar */
+.bp_TitleBar {
+  background-color: var(--title-bar-bg);
+}
+
+/* page on right when there is no chat opened */
+.mx_HomePage {
+  background-color: var(--chat-panel-bg);
+}
+
+/* Left Panel */
+.bp_LeftPanel,
+.bp_LeftPanel .rooms_subtitle-container,
+.bp_RoomTile .actions-container .info,
+.mx_MatrixChat_wrapper--windows .bp_LeftPanel,
+.mx_MatrixChat_wrapper--linux .bp_LeftPanel {
+  background-color: var(--left-panel-bg);
+}
+
+/* Room Header */
+.mx_RoomHeader {
+  background: var(--chat-header-bg);
+}
+
+/* Background of right side */
+.mx_RoomView_messageListWrapper {
+  background: var(--chat-panel-bg);
+}
+
+/* message composer */
+.mx_MessageComposer {
+  background: var(--chat-panel-bg);
+}
+
+/* Dialogs */
+.mx_Dialog {
+  background-color: var(--dialog-bg);
+}
+
+/* Room information */
+.dark-panel,
+.mx_RightPanel_ResizeWrapper {
+  background-color: var(--primary-color);
+}
+
+/* padding of message bubbles */
+.mx_EventTile_messageOut .mx_EventTile_line,
+.mx_EventTile_message .mx_EventTile_line {
+  padding: 8px 16px;
+}
+
+/* Who is typing (below composer) */
+.bp_WhoIsTypingTile {
+  z-index: 10;
+  background: var(--chat-panel-bg);
+}

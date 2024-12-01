@@ -1,19 +1,19 @@
 ------------------------
--- Gruvbox Dark Theme --
+-- Ayu Dark with complete dark background --
 ------------------------
 
 local background = '#000000'
-local foreground = '#ebdbb2'
+local foreground = '#B3B1AD'
 
 -- Normal colors
-local black      = '#000000'
-local red        = '#cc241d'
-local green      = '#98971a'
-local yellow     = '#d79921'
-local blue       = '#458588'
-local magenta    = '#b16286'
-local cyan       = '#689d6a'
-local white      = '#a89984'
+local black      = '#01060E'
+local red        = '#EA6C73'
+local green      = '#91B362'
+local yellow     = '#F9AF4F'
+local blue       = '#53BDFA'
+local magenta    = '#FAE994'
+local cyan       = '#90E1C6'
+local white      = '#C7C7C7'
 
 
 local theme_assets                              = require("beautiful.theme_assets")
@@ -29,20 +29,20 @@ theme.font                                      = "sans 8"
 
 theme.bg_normal                                 = background
 theme.bg_focus                                  = background
-theme.bg_urgent                                 = green
+theme.bg_urgent                                 = yellow
 theme.bg_minimize                               = background
 theme.bg_systray                                = theme.bg_normal
 
 theme.fg_normal                                 = foreground
-theme.fg_focus                                  = green
-theme.fg_urgent                                 = green
+theme.fg_focus                                  = yellow
+theme.fg_urgent                                 = yellow
 theme.fg_minimize                               = foreground
 
 theme.useless_gap                               = dpi(0)
 theme.border_width                              = dpi(1)
 theme.border_normal                             = background
 theme.border_focus                              = foreground
-theme.border_marked                             = green
+theme.border_marked                             = yellow
 
 -- There are other variable sets
 -- overriding the default one when

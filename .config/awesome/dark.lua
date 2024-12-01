@@ -5,7 +5,6 @@
 local background = '#000000'
 local foreground = '#B3B1AD'
 
--- Normal colors
 local black      = '#01060E'
 local red        = '#EA6C73'
 local green      = '#91B362'

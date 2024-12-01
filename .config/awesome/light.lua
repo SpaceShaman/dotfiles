@@ -1,21 +1,18 @@
--------------------------
--- Gruvbox Light Theme --
--------------------------
+---------------
+-- Ayu Light --
+---------------
 
--- hard contrast background = = '#f9f5d7'
-local background = '#fbf1c7'
--- soft contrast background = = '#f2e5bc'
-local foreground = '#3c3836'
+local background = '#FCFCFC'
+local foreground = '#5C6166'
 
--- Normal colors
-local black      = '#fbf1c7'
-local red        = '#cc241d'
-local green      = '#98971a'
-local yellow     = '#d79921'
-local blue       = '#458588'
-local magenta    = '#b16286'
-local cyan       = '#689d6a'
-local white      = '#7c6f64'
+local black      = '#010101'
+local red        = '#e7666a'
+local green      = '#80ab24'
+local yellow     = '#eba54d'
+local blue       = '#4196df'
+local magenta    = '#9870c3'
+local cyan       = '#51b891'
+local white      = '#c1c1c1'
 
 
 local theme_assets                              = require("beautiful.theme_assets")
@@ -31,20 +28,20 @@ theme.font                                      = "sans 8"
 
 theme.bg_normal                                 = background
 theme.bg_focus                                  = background
-theme.bg_urgent                                 = green
+theme.bg_urgent                                 = yellow
 theme.bg_minimize                               = background
 theme.bg_systray                                = theme.bg_normal
 
 theme.fg_normal                                 = foreground
-theme.fg_focus                                  = green
-theme.fg_urgent                                 = green
+theme.fg_focus                                  = yellow
+theme.fg_urgent                                 = yellow
 theme.fg_minimize                               = foreground
 
-theme.useless_gap                               = dpi(3)
+theme.useless_gap                               = dpi(0)
 theme.border_width                              = dpi(2)
 theme.border_normal                             = background
-theme.border_focus                              = cyan
-theme.border_marked                             = green
+theme.border_focus                              = blue
+theme.border_marked                             = yellow
 
 -- There are other variable sets
 -- overriding the default one when

@@ -9,7 +9,7 @@ apt-add-repository -y ppa:neovim-ppa/stable
 apt-add-repository -y ppa:aslatter/ppa
 apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip translate-shell
 
-bash pyenv.sh
+bash python.sh
 
 # Set neovim as default editor
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60

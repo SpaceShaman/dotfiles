@@ -26,6 +26,7 @@ npm install -g npm@latest
 npm install -g opencommit
 
 # Install fisher plugins
+chown -R $USER ~/.config/fish
 fish -c "fisher update"
 
 # Set hotkey for emoji panel to prevent conflict with vscode hotkeys

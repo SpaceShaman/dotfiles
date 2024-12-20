@@ -1,0 +1,17 @@
+import:
+  - ~/.config/alacritty/themes/dark.yml
+
+font:
+  size: 16
+
+normal:
+  family: "Hack Nerd Font Propo"
+
+window:
+  decorations: "none"
+  dynamic_padding: true
+  padding:
+    x: 2
+
+mouse:
+  hide_when_typing: true

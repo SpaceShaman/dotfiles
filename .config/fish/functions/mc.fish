@@ -3,7 +3,7 @@ function mc
     set SHELL_PID %self
     set MC_PWD_FILE "/tmp/mc-$USER/mc.pwd.$SHELL_PID"
         
-    /usr/bin/mc -P $MC_PWD_FILE $argv
+    /usr/bin/mc -P $MC_PWD_FILE $argv --nosubshell
         
     if test -r $MC_PWD_FILE
     

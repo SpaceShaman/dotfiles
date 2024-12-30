@@ -15,5 +15,6 @@ if status is-interactive
 	alias screen='bash ~/.scripts/screen.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export EDITOR=vim
+	export TERM=xterm-256color
 	pyenv init - | source
 end

@@ -421,7 +421,11 @@ globalkeys = gears.table.join(
     awful.key({}, "Print", function()
             awful.spawn("bash /home/ton618/.scripts/screenshot.sh")
         end,
-        { description = "take screenshot", group = "screenshots" })
+        { description = "take screenshot", group = "screenshots" }),
+    awful.key({ "Shift" }, "Print", function()
+            awful.spawn("bash /home/ton618/.scripts/screenshot.sh --full")
+        end,
+        { description = "take full screenshot", group = "screenshots" })
 )
 
 

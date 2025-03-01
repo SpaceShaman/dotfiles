@@ -22,7 +22,7 @@ Left click toggles mute and middle click opens a mixer ([pavucontrol](https://fr
 Clone the repo under **~/.config/awesome/** and add widget in **rc.lua**:
 
 ```lua
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local volume_widget = require('widgets.volume-widget.volume')
 ...
 s.mytasklist, -- Middle widget
 	{ -- Right widgets

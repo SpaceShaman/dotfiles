@@ -56,13 +56,13 @@ To choose the right `program` argument, first you need to check which of them wo
 Then clone this repo under **~/.config/awesome/**:
 
 ```bash
-git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
+git clone https://github.com/streetturtle/widgets.git ~/.config/awesome/widgets
 ```
 
 Require widget at the beginning of **rc.lua**:
 
 ```lua
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local brightness_widget = require("widgets.brightness-widget.brightness")
 ```
 
 Add the widget to the tasklist:

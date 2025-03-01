@@ -2,7 +2,7 @@
 -- Calendar Widget for Awesome Window Manager
 -- Shows the current month and supports scroll up/down to switch month
 -- More details could be found here:
--- https://github.com/streetturtle/awesome-wm-widgets/tree/master/calendar-widget
+-- https://github.com/streetturtle/widgets/tree/master/calendar-widget
 
 -- @author Pavel Makhov
 -- @copyright 2019 Pavel Makhov
@@ -17,7 +17,6 @@ local naughty = require("naughty")
 local calendar_widget = {}
 
 local function worker(user_args)
-
     local calendar_themes = {
         nord = {
             bg = '#2E3440',
@@ -88,7 +87,8 @@ local function worker(user_args)
         naughty.notify({
             preset = naughty.config.presets.critical,
             title = 'Calendar Widget',
-            text = 'Theme "' .. args.theme .. '" not found, fallback to default'})
+            text = 'Theme "' .. args.theme .. '" not found, fallback to default'
+        })
         args.theme = 'naughty'
     end
 
@@ -205,29 +205,28 @@ local function worker(user_args)
     }
 
     popup:buttons(
-            awful.util.table.join(
-                    awful.button({}, next_month_button, function()
-                        local a = cal:get_date()
-                        a.month = a.month + 1
-                        cal:set_date(nil)
-                        cal:set_date(a)
-                        popup:set_widget(cal)
-                    end),
-                    awful.button({}, previous_month_button, function()
-                        local a = cal:get_date()
-                        a.month = a.month - 1
-                        cal:set_date(nil)
-                        cal:set_date(a)
-                        popup:set_widget(cal)
-                    end)
-            )
+        awful.util.table.join(
+            awful.button({}, next_month_button, function()
+                local a = cal:get_date()
+                a.month = a.month + 1
+                cal:set_date(nil)
+                cal:set_date(a)
+                popup:set_widget(cal)
+            end),
+            awful.button({}, previous_month_button, function()
+                local a = cal:get_date()
+                a.month = a.month - 1
+                cal:set_date(nil)
+                cal:set_date(a)
+                popup:set_widget(cal)
+            end)
+        )
     )
 
     function calendar_widget.toggle()
-
         if popup.visible then
             -- to faster render the calendar refresh it and just hide
-            cal:set_date(nil) -- the new date is not set without removing the old one
+            cal:set_date(nil)     -- the new date is not set without removing the old one
             cal:set_date(os.date('*t'))
             popup:set_widget(nil) -- just in case
             popup:set_widget(cal)
@@ -236,28 +235,32 @@ local function worker(user_args)
             if placement == 'top' then
                 awful.placement.top(popup, { margins = { top = 30 }, parent = awful.screen.focused() })
             elseif placement == 'top_right' then
-                awful.placement.top_right(popup, { margins = { top = 30, right = 10}, parent = awful.screen.focused() })
+                awful.placement.top_right(popup, { margins = { top = 30, right = 10 }, parent = awful.screen.focused() })
             elseif placement == 'top_left' then
-                awful.placement.top_left(popup, { margins = { top = 30, left = 10}, parent = awful.screen.focused() })
+                awful.placement.top_left(popup, { margins = { top = 30, left = 10 }, parent = awful.screen.focused() })
             elseif placement == 'bottom_right' then
-                awful.placement.bottom_right(popup, { margins = { bottom = 30, right = 10},
-                    parent = awful.screen.focused() })
+                awful.placement.bottom_right(popup, {
+                    margins = { bottom = 30, right = 10 },
+                    parent = awful.screen.focused()
+                })
             elseif placement == 'bottom_left' then
-                awful.placement.bottom_left(popup, { margins = { bottom = 30, left = 10},
-                    parent = awful.screen.focused() })
+                awful.placement.bottom_left(popup, {
+                    margins = { bottom = 30, left = 10 },
+                    parent = awful.screen.focused()
+                })
             else
                 awful.placement.top(popup, { margins = { top = 30 }, parent = awful.screen.focused() })
             end
 
             popup.visible = true
-
         end
     end
 
     return calendar_widget
-
 end
 
-return setmetatable(calendar_widget, { __call = function(_, ...)
-    return worker(...)
-end })
+return setmetatable(calendar_widget, {
+    __call = function(_, ...)
+        return worker(...)
+    end
+})

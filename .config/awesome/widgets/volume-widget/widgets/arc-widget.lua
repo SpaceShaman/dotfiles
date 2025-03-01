@@ -1,7 +1,7 @@
 local wibox = require("wibox")
 local beautiful = require('beautiful')
 
-local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/awesome-wm-widgets/volume-widget/icons/'
+local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/widgets/volume-widget/icons/'
 
 local widget = {}
 
@@ -39,8 +39,6 @@ function widget.get_widget(widgets_args)
             self.colors = { main_color }
         end
     }
-
 end
-
 
 return widget

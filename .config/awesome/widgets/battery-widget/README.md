@@ -32,7 +32,7 @@ It is possible to customize widget by providing a table with all or some of the 
 | `warning_msg_title` | `Huston, we have a problem` | Title of the warning popup |
 | `warning_msg_text` | `Battery is dying` | Text of the warning popup |
 | `warning_msg_position` | `bottom_right` | Position of the warning popup |
-| `warning_msg_icon` | `~/.config/awesome/awesome-wm-widgets/battery-widget/spaceman.jpg` | Icon of the warning popup |
+| `warning_msg_icon` | `~/.config/awesome/widgets/battery-widget/spaceman.jpg` | Icon of the warning popup |
 | `enable_battery_warning` | true | Display low battery warning |
 
 *Note: the widget expects following icons to be present in the folder:
@@ -63,7 +63,7 @@ Battery 0: Discharging, 66%, 02:34:06 remaining
 ```
 
 ```lua
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local battery_widget = require("widgets.battery-widget.battery")
 
 ...
 s.mytasklist, -- Middle widget

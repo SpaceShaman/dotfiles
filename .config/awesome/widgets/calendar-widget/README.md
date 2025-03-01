@@ -67,7 +67,7 @@ This widget needs an 'anchor' - another widget which triggers visibility of the 
 Just after mytextclock is instantiated, create the widget and add the mouse listener to it.
 
 ```lua
-local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local calendar_widget = require("widgets.calendar-widget.calendar")
 -- ...
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()

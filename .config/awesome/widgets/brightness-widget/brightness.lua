@@ -2,7 +2,7 @@
 -- Brightness Widget for Awesome Window Manager
 -- Shows the brightness level of the laptop display
 -- More details could be found here:
--- https://github.com/streetturtle/awesome-wm-widgets/tree/master/brightness-widget
+-- https://github.com/streetturtle/widgets/tree/master/brightness-widget
 
 -- @author Pavel Makhov
 -- @copyright 2021 Pavel Makhov
@@ -16,7 +16,7 @@ local gfs = require("gears.filesystem")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
-local ICON_DIR = gfs.get_configuration_dir() .. "awesome-wm-widgets/brightness-widget/"
+local ICON_DIR = gfs.get_configuration_dir() .. "widgets/brightness-widget/"
 local get_brightness_cmd
 local set_brightness_cmd
 local inc_brightness_cmd
@@ -25,15 +25,15 @@ local dec_brightness_cmd
 local brightness_widget = {}
 
 local function show_warning(message)
-	naughty.notify({
-		preset = naughty.config.presets.critical,
-		title = "Brightness Widget",
-		text = message,
-	})
+    naughty.notify({
+        preset = naughty.config.presets.critical,
+        title = "Brightness Widget",
+        text = message,
+    })
 end
 
 local function worker(user_args)
-	  local args = user_args or {}
+    local args = user_args or {}
 
     local type = args.type or 'arc' -- arc or icon_and_text
     local path_to_icon = args.path_to_icon or ICON_DIR .. 'brightness.svg'
@@ -118,7 +118,6 @@ local function worker(user_args)
     else
         show_warning(type .. " type is not supported by the widget")
         return
-
     end
 
     local update_widget = function(widget, stdout, _, _, _)
@@ -135,6 +134,7 @@ local function worker(user_args)
             end)
         end)
     end
+
     local old_level = 0
     function brightness_widget:toggle()
         if rmb_set_max then
@@ -155,6 +155,7 @@ local function worker(user_args)
             brightness_widget:set(current_level)
         end
     end
+
     function brightness_widget:inc()
         spawn.easy_async(inc_brightness_cmd, function()
             spawn.easy_async(get_brightness_cmd, function(out)
@@ -162,6 +163,7 @@ local function worker(user_args)
             end)
         end)
     end
+
     function brightness_widget:dec()
         spawn.easy_async(dec_brightness_cmd, function()
             spawn.easy_async(get_brightness_cmd, function(out)
@@ -171,12 +173,12 @@ local function worker(user_args)
     end
 
     brightness_widget.widget:buttons(
-            awful.util.table.join(
-                    awful.button({}, 1, function() brightness_widget:set(base) end),
-                    awful.button({}, 3, function() brightness_widget:toggle() end),
-                    awful.button({}, 4, function() brightness_widget:inc() end),
-                    awful.button({}, 5, function() brightness_widget:dec() end)
-            )
+        awful.util.table.join(
+            awful.button({}, 1, function() brightness_widget:set(base) end),
+            awful.button({}, 3, function() brightness_widget:toggle() end),
+            awful.button({}, 4, function() brightness_widget:inc() end),
+            awful.button({}, 5, function() brightness_widget:dec() end)
+        )
     )
 
     watch(get_brightness_cmd, timeout, update_widget, brightness_widget.widget)
@@ -194,7 +196,7 @@ local function worker(user_args)
 end
 
 return setmetatable(brightness_widget, {
-	__call = function(_, ...)
-		return worker(...)
-	end,
+    __call = function(_, ...)
+        return worker(...)
+    end,
 })

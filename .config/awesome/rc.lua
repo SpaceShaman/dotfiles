@@ -18,15 +18,14 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Load Debian menu entries
-local debian = require("debian.menu")
+-- Load Menu
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Widgets
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
-local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local battery_widget = require("widgets.battery-widget.battery")
+local brightness_widget = require("widgets.brightness-widget.brightness")
+local volume_widget = require('widgets.volume-widget.volume')
+local calendar_widget = require("widgets.calendar-widget.calendar")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -59,7 +58,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "dark.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/dark.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -111,14 +110,6 @@ if has_fdo then
     mymainmenu = freedesktop.menu.build({
         before = { menu_awesome },
         after = { menu_terminal }
-    })
-else
-    mymainmenu = awful.menu({
-        items = {
-            menu_awesome,
-            { "Debian", debian.menu.Debian_menu.Debian },
-            menu_terminal,
-        }
     })
 end
 

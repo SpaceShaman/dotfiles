@@ -425,9 +425,34 @@ globalkeys = gears.table.join(
     awful.key({ "Shift" }, "Print", function()
             awful.spawn("bash /home/ton618/.scripts/screenshot.sh --full")
         end,
-        { description = "take full screenshot", group = "screenshots" })
-)
+        { description = "take full screenshot", group = "screenshots" }),
 
+    -- Numpad
+    awful.key({}, "KP_End", function()
+            awful.spawn("firefox")
+        end,
+        { description = "firefox", group = "numpad" }),
+    awful.key({}, "KP_Down", function()
+            awful.spawn("code")
+        end,
+        { description = "code", group = "numpad" }),
+    awful.key({}, "KP_Next", function()
+            awful.spawn("obsidian")
+        end,
+        { description = "obsidian", group = "numpad" }),
+    awful.key({}, "KP_Left", function()
+            awful.spawn("spotify")
+        end,
+        { description = "spotify", group = "numpad" }),
+    awful.key({}, "KP_Begin", function()
+            awful.spawn("/home/ton618/Applications/beeper-3.110.1x86_64_fa7f4ddd355e446c77c6e1b93f8a47ae.AppImage")
+        end,
+        { description = "beeper", group = "numpad" }),
+    awful.key({}, "KP_Prior", function()
+            awful.spawn("code /home/ton618/Dev/quadra/core")
+        end,
+        { description = "Work", group = "numpad" })
+)
 
 function move_to_screen_by_direction(direction, c)
     local screen_left = "DVI-I-2-2"

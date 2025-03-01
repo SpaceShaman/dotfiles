@@ -448,10 +448,18 @@ globalkeys = gears.table.join(
             awful.spawn("/home/ton618/Applications/beeper-3.110.1x86_64_fa7f4ddd355e446c77c6e1b93f8a47ae.AppImage")
         end,
         { description = "beeper", group = "numpad" }),
+    awful.key({}, "KP_Home", function()
+            awful.spawn("thunderbird")
+        end,
+        { description = "Work Teams", group = "numpad" }),
+    awful.key({}, "KP_Up", function()
+            awful.spawn("teams-for-linux")
+        end,
+        { description = "Work Teams", group = "numpad" }),
     awful.key({}, "KP_Prior", function()
             awful.spawn("code /home/ton618/Dev/quadra/core")
         end,
-        { description = "Work", group = "numpad" })
+        { description = "Work code", group = "numpad" })
 )
 
 function move_to_screen_by_direction(direction, c)

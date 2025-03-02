@@ -259,8 +259,8 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
-root.buttons(require("global_buttons"))
 root.keys(require("global_keys"))
+root.buttons(require("global_buttons"))
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).

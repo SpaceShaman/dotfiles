@@ -1,7 +1,3 @@
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
-pcall(require, "luarocks.loader")
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -13,10 +9,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
+
+local global_keys = require("global_keys")
 
 -- Load Menu
 local has_fdo, freedesktop = pcall(require, "freedesktop")
@@ -26,6 +20,7 @@ local battery_widget = require("widgets.battery-widget.battery")
 local brightness_widget = require("widgets.brightness-widget.brightness")
 local volume_widget = require('widgets.volume-widget.volume')
 local calendar_widget = require("widgets.calendar-widget.calendar")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -61,16 +56,11 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/dark.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "editor"
-editor_cmd = terminal .. " -e " .. editor
+local terminal = "x-terminal-emulator"
+local editor = os.getenv("EDITOR") or "editor"
+local editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -96,7 +86,6 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-    { "hotkeys",     function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
     { "manual",      terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     { "restart",     awesome.restart },
@@ -124,6 +113,14 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+
+
+-- Default modkey.
+-- Usually, Mod4 is the key with a logo between Control and Alt.
+-- If you do not like this or do not have such a key,
+-- I suggest you to remap Mod4 to another key using xmodmap or other tools.
+-- However, you can use another modifier like Mod1, but it may interact with others.
+local modkey = "Mod4"
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -270,190 +267,9 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- {{{ Key bindings
-globalkeys = gears.table.join(
--- Awesome
-    awful.key({ modkey, }, "h", hotkeys_popup.show_help,
-        { description = "show help", group = "awesome" }),
-    awful.key({ modkey, }, "m", function() mymainmenu:show() end,
-        { description = "show main menu", group = "awesome" }),
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
-        { description = "reload awesome", group = "awesome" }),
-    awful.key({ modkey, "Shift" }, "q", awesome.quit,
-        { description = "quit awesome", group = "awesome" }),
-    awful.key({ modkey, }, "Escape", function()
-            for s in screen do
-                s.mywibox.visible = not s.mywibox.visible
-            end
-        end,
-        { description = "toggle wibar", group = "awesome" }),
-
-    awful.key({ modkey, }, "s", awful.tag.viewprev,
-        { description = "view previous", group = "tag" }),
-    awful.key({ modkey, }, "w", awful.tag.viewnext,
-        { description = "view next", group = "tag" }),
-
-    awful.key({ modkey, }, "d",
-        function()
-            awful.client.focus.byidx(1)
-        end,
-        { description = "focus next by index", group = "client" }
-    ),
-    awful.key({ modkey, }, "a",
-        function()
-            awful.client.focus.byidx(-1)
-        end,
-        { description = "focus previous by index", group = "client" }
-    ),
-
-    -- Screen focus
-    awful.key({ modkey, }, "Right", function() awful.screen.focus_bydirection("right") end,
-        { description = "focus to the right screen", group = "screen" }),
-    awful.key({ modkey, }, "Left", function() awful.screen.focus_bydirection("left") end,
-        { description = "focus to the left screen", group = "screen" }),
-    awful.key({ modkey, }, "Up", function() awful.screen.focus_bydirection("up") end,
-        { description = "focus to the up screen", group = "screen" }),
-    awful.key({ modkey, }, "Down", function() awful.screen.focus_bydirection("down") end,
-        { description = "focus to the down screen", group = "screen" }),
 
 
-    -- Layout manipulation
-    awful.key({ modkey, "Control" }, "Right", function() awful.tag.incmwfact(0.05) end,
-        { description = "increase master width factor", group = "layout" }),
-    awful.key({ modkey, "Control" }, "Left", function() awful.tag.incmwfact(-0.05) end,
-        { description = "decrease master width factor", group = "layout" }),
-    awful.key({ modkey, "Mod1" }, "Right", function() awful.tag.incncol(1, nil, true) end,
-        { description = "increase the number of columns", group = "layout" }),
-    awful.key({ modkey, "Mod1" }, "Left", function() awful.tag.incncol(-1, nil, true) end,
-        { description = "decrease the number of columns", group = "layout" }),
-    awful.key({ modkey, "Mod1" }, "Up", function() awful.tag.incnmaster(1, nil, true) end,
-        { description = "increase the number of master clients", group = "layout" }),
-    awful.key({ modkey, "Mod1" }, "Down", function() awful.tag.incnmaster(-1, nil, true) end,
-        { description = "decrease the number of master clients", group = "layout" }),
-    awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
-        { description = "select next", group = "layout" }),
-    awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
-        { description = "select previous", group = "layout" }),
-
-
-    -- Terminal
-    awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
-        { description = "open a terminal", group = "launcher" }),
-
-    -- Prompt
-    awful.key({ modkey }, "r", function()
-            awful.spawn("rofi -show drun")
-        end,
-        { description = "run prompt", group = "launcher" }),
-
-    -- Template
-    awful.key({ modkey, }, "t", function()
-            awful.spawn("bash /home/ton618/.scripts/theme.sh")
-        end,
-        { description = "toggle theme", group = "template" }),
-
-    -- Aplications
-    awful.key({ modkey, }, "f", function()
-            awful.spawn("firefox")
-        end,
-        { description = "firefox", group = "aplications" }),
-    awful.key({ modkey, }, "c", function()
-            awful.spawn("code")
-        end,
-        { description = "code", group = "aplications" }),
-    awful.key({ modkey, }, "p", function()
-            awful.spawn("code /home/ton618/Dev/quadra/core/core.code-workspace")
-        end,
-        { description = "Quadra Core", group = "workspace" }),
-    awful.key({ modkey, }, "o", function()
-            awful.spawn("obsidian")
-        end,
-        { description = "obsidian", group = "aplications" }),
-
-    -- Brightness
-    awful.key({}, "XF86MonBrightnessUp", function()
-            -- awful.spawn("bash /home/ton618/.scripts/brightness.sh +5")
-            brightness_widget:inc()
-        end,
-        { description = "increase brightness", group = "brightness" }),
-    awful.key({}, "XF86MonBrightnessDown", function()
-            brightness_widget:dec()
-            -- awful.spawn("bash /home/ton618/.scripts/brightness.sh -5")
-        end,
-        { description = "decrease brightness", group = "brightness" }),
-
-    -- Volume
-    awful.key({}, "XF86AudioRaiseVolume", function() volume_widget.inc(5) end,
-        { description = "increase volume", group = "volume" }),
-    awful.key({}, "XF86AudioLowerVolume", function() volume_widget.dec(5) end,
-        { description = "decrease volume", group = "volume" }),
-    awful.key({}, "XF86AudioMute", function() volume_widget.toggle() end,
-        { description = "toggle mute", group = "volume" }),
-
-    -- Songs
-    awful.key({}, "XF86AudioPlay", function()
-            awful.spawn("playerctl play-pause")
-        end,
-        { description = "play/pause song", group = "songs" }),
-    awful.key({}, "XF86AudioNext", function()
-            awful.spawn("playerctl next")
-        end,
-        { description = "next song", group = "songs" }),
-    awful.key({}, "XF86AudioPrev", function()
-            awful.spawn("playerctl previous")
-        end,
-        { description = "previous song", group = "songs" }),
-    awful.key({}, "XF86AudioStop", function()
-            awful.spawn("playerctl stop")
-        end,
-        { description = "stop song", group = "songs" }),
-
-    -- Screenshots
-    awful.key({}, "Print", function()
-            awful.spawn("bash /home/ton618/.scripts/screenshot.sh")
-        end,
-        { description = "take screenshot", group = "screenshots" }),
-    awful.key({ "Shift" }, "Print", function()
-            awful.spawn("bash /home/ton618/.scripts/screenshot.sh --full")
-        end,
-        { description = "take full screenshot", group = "screenshots" }),
-
-    -- Numpad
-    awful.key({}, "KP_End", function()
-            awful.spawn("firefox")
-        end,
-        { description = "firefox", group = "numpad" }),
-    awful.key({}, "KP_Down", function()
-            awful.spawn("code")
-        end,
-        { description = "code", group = "numpad" }),
-    awful.key({}, "KP_Next", function()
-            awful.spawn("obsidian")
-        end,
-        { description = "obsidian", group = "numpad" }),
-    awful.key({}, "KP_Left", function()
-            awful.spawn("spotify")
-        end,
-        { description = "spotify", group = "numpad" }),
-    awful.key({}, "KP_Begin", function()
-            awful.spawn("/home/ton618/Applications/beeper-3.110.1x86_64_fa7f4ddd355e446c77c6e1b93f8a47ae.AppImage")
-        end,
-        { description = "beeper", group = "numpad" }),
-    awful.key({}, "KP_Home", function()
-            awful.spawn("thunderbird")
-        end,
-        { description = "Work Teams", group = "numpad" }),
-    awful.key({}, "KP_Up", function()
-            awful.spawn("teams-for-linux")
-        end,
-        { description = "Work Teams", group = "numpad" }),
-    awful.key({}, "KP_Prior", function()
-            awful.spawn("code /home/ton618/Dev/quadra/core")
-        end,
-        { description = "Work code", group = "numpad" })
-)
-
-function move_to_screen_by_direction(direction, c)
+local function move_to_screen_by_direction(direction, c)
     local screen_left = "DVI-I-2-2"
     local screen_right = "DVI-I-1-1"
     local screen_bottom = "eDP-1"
@@ -535,7 +351,7 @@ clientkeys = gears.table.join(
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
-    globalkeys = gears.table.join(globalkeys,
+    global_keys = gears.table.join(global_keys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
             function()
@@ -596,7 +412,7 @@ clientbuttons = gears.table.join(
 )
 
 -- Set keys
-root.keys(globalkeys)
+root.keys(global_keys)
 -- }}}
 
 -- {{{ Rules

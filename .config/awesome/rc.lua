@@ -297,7 +297,7 @@ awful.rules.rules = {
             focus = awful.client.focus.filter,
             raise = true,
             keys = require("client_keys"),
-            buttons = clientbuttons,
+            buttons = require("client_buttons"),
             screen = awful.screen.preferred,
             placement = awful.placement.no_overlap + awful.placement.no_offscreen
         }

@@ -269,84 +269,6 @@ root.buttons(gears.table.join(
 
 
 
-local function move_to_screen_by_direction(direction, c)
-    local screen_left = "DVI-I-2-2"
-    local screen_right = "DVI-I-1-1"
-    local screen_bottom = "eDP-1"
-
-    local current_screen = awful.screen.focused()
-    for k, v in pairs(current_screen.outputs) do
-        if direction == "left" then
-            if k == screen_right or k == screen_bottom then
-                c:move_to_screen(screen_left)
-            end
-        elseif direction == "right" then
-            if k == screen_left or k == screen_bottom then
-                c:move_to_screen(screen_right)
-            end
-        elseif direction == "up" then
-            if k == screen_bottom then
-                c:move_to_screen(screen_right)
-            end
-        elseif direction == "down" then
-            if k == screen_right or k == screen_left then
-                c:move_to_screen(screen_bottom)
-            end
-        end
-    end
-end
-
-clientkeys = gears.table.join(
-    awful.key({ modkey, }, "f",
-        function(c)
-            c.fullscreen = not c.fullscreen
-            c:raise()
-        end,
-        { description = "toggle fullscreen", group = "client" }),
-    awful.key({ modkey, }, "q", function(c) c:kill() end,
-        { description = "close", group = "client" }),
-    awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
-        { description = "toggle floating", group = "client" }),
-    -- Move client to screen
-    awful.key({ modkey, "Shift" }, "Left", function(c)
-            move_to_screen_by_direction("left", c)
-        end,
-        { description = "move to the left screen", group = "client" }),
-    awful.key({ modkey, "Shift" }, "Right", function(c)
-            move_to_screen_by_direction("right", c)
-        end,
-        { description = "move to the right screen", group = "client" }),
-    awful.key({ modkey, "Shift" }, "Up", function(c)
-            move_to_screen_by_direction("up", c)
-        end,
-        { description = "move to the up screen", group = "client" }),
-    awful.key({ modkey, "Shift" }, "Down", function(c)
-            move_to_screen_by_direction("down", c)
-        end,
-        { description = "move to the down screen", group = "client" }),
-    -- Swap clients
-    awful.key({ modkey, "Shift" }, "d", function() awful.client.swap.byidx(1) end,
-        { description = "swap with next client by index", group = "client" }),
-    awful.key({ modkey, "Shift" }, "a", function() awful.client.swap.byidx(-1) end,
-        { description = "swap with previous client by index", group = "client" }),
-    awful.key({ modkey, }, "Tab",
-        function()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        { description = "go back", group = "client" }),
-    awful.key({ modkey, "Shift" }, "m",
-        function(c)
-            c.maximized = false
-            c.maximized_vertical = false
-            c.maximized_horizontal = false
-            c:raise()
-        end,
-        { description = "demaximize", group = "client" })
-)
-
 clientbuttons = gears.table.join(
     awful.button({}, 1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
@@ -374,7 +296,7 @@ awful.rules.rules = {
             border_color = beautiful.border_normal,
             focus = awful.client.focus.filter,
             raise = true,
-            keys = clientkeys,
+            keys = require("client_keys"),
             buttons = clientbuttons,
             screen = awful.screen.preferred,
             placement = awful.placement.no_overlap + awful.placement.no_offscreen

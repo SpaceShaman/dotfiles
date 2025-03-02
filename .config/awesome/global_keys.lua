@@ -1,7 +1,7 @@
-local hotkeys_popup = require("awful.hotkeys_popup")
 local awful = require("awful")
 local brightness_widget = require("widgets.brightness-widget.brightness")
 local get_keys_table = require("utils.get_keys_table")
+local bind_key_numbers_to_tags = require("utils.bind_key_numbers_to_tags")
 
 local MODKEY = "Mod4"
 local ALTKEY = "Mod1"
@@ -283,4 +283,4 @@ local global_keys = {
     }
 }
 
-return get_keys_table(global_keys)
+return bind_key_numbers_to_tags(get_keys_table(global_keys), MODKEY)

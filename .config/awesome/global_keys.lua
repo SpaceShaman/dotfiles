@@ -230,56 +230,6 @@ local global_keys = {
         action = function()
             awful.spawn("bash /home/ton618/.scripts/screenshot.sh --full")
         end,
-    },
-    -- numpad
-    {
-        key = "KP_End",
-        action = function()
-            awful.spawn("firefox")
-        end,
-    },
-    {
-        key = "KP_Down",
-        action = function()
-            awful.spawn("code")
-        end,
-    },
-    {
-        key = "KP_Next",
-        action = function()
-            awful.spawn("obsidian")
-        end,
-    },
-    {
-        key = "KP_Left",
-        action = function()
-            awful.spawn("spotify")
-        end,
-    },
-    {
-        key = "KP_Begin",
-        action = function()
-            awful.spawn(
-                "/home/ton618/Applications/beeper-3.110.1x86_64_fa7f4ddd355e446c77c6e1b93f8a47ae.AppImage")
-        end,
-    },
-    {
-        key = "KP_Home",
-        action = function()
-            awful.spawn("thunderbird")
-        end,
-    },
-    {
-        key = "KP_Up",
-        action = function()
-            awful.spawn("teams-for-linux")
-        end,
-    },
-    {
-        key = "KP_Prior",
-        action = function()
-            awful.spawn("code /home/ton618/Dev/quadra/core")
-        end,
     }
 }
 

@@ -6,7 +6,7 @@ app_name=$(basename $(pwd))
 if [ "$app_name" = "app" ]; then
     app_name=$(basename $(dirname $(pwd)))
 fi
-if [ "$app_name" != "warehouse" ] && [ "$app_name" != "connect" ] && [ "$app_name" != "analytics" ] && [ "$app_name" != "frontend" ] && [ "$app_name" != "auth" ]; then
+if [ "$app_name" != "warehouse" ] && [ "$app_name" != "connect" ] && [ "$app_name" != "analytics" ] && [ "$app_name" != "frontend" ] && [ "$app_name" != "auth" ] && [ "$app_name" != "core" ]; then
     echo -e "\033[1;31mYou are not in the correct directory to update the app.\033[0m"
     exit 1
 fi

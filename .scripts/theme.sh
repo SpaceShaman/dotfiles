@@ -12,6 +12,11 @@ theme=$(cat ~/.config/theme)
 if [ "$theme" = "dark" ]; then
     # change system theme to light
     gsettings set org.gnome.desktop.interface color-scheme 'default'
+    # change gtk theme to light
+    sed -i 's/Adwaita-dark/Adwaita/' ~/.config/gtk-1.0/settings.ini
+    sed -i 's/Adwaita-dark/Adwaita/' ~/.config/gtk-2.0/settings.ini
+    sed -i 's/Adwaita-dark/Adwaita/' ~/.config/gtk-3.0/settings.ini
+    sed -i 's/Adwaita-dark/Adwaita/' ~/.config/gtk-4.0/settings.ini
     # change theme to light in alacritty
     sed -i 's/dark/light/' ~/.config/alacritty/alacritty.yml
     # change rofi theme to light
@@ -27,6 +32,11 @@ if [ "$theme" = "dark" ]; then
 else
     # change system theme to dark
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    # change gtk theme to dark
+    sed -i 's/Adwaita/Adwaita-dark/' ~/.config/gtk-1.0/settings.ini
+    sed -i 's/Adwaita/Adwaita-dark/' ~/.config/gtk-2.0/settings.ini
+    sed -i 's/Adwaita/Adwaita-dark/' ~/.config/gtk-3.0/settings.ini
+    sed -i 's/Adwaita/Adwaita-dark/' ~/.config/gtk-4.0/settings.ini
     # change alacritty theme to dark
     sed -i 's/light/dark/' ~/.config/alacritty/alacritty.yml
     # change rofi theme to dark

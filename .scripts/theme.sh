@@ -14,7 +14,7 @@ if [ "$theme" = "dark" ]; then
     gsettings set org.gnome.desktop.interface color-scheme 'default'
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
     # change gtk theme to light
-    sed -i 's/Adwaita-dark/Adwaita/' ~/.config/gtk-3.0/settings.ini
+    sed -i 's/gtk-theme-name=Adwaita-dark/gtk-theme-name=Adwaita/' ~/.config/gtk-3.0/settings.ini
     sed -i 's/gtk-application-prefer-dark-theme=1/gtk-application-prefer-dark-theme=0/' ~/.config/gtk-3.0/settings.ini
     # change theme to light in alacritty
     sed -i 's/dark/light/' ~/.config/alacritty/alacritty.yml
@@ -32,7 +32,7 @@ else
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
     # change gtk theme to dark
-    sed -i 's/Adwaita/Adwaita-dark/' ~/.config/gtk-3.0/settings.ini
+    sed -i 's/gtk-theme-name=Adwaita/gtk-theme-name=Adwaita-dark/' ~/.config/gtk-3.0/settings.ini
     sed -i 's/gtk-application-prefer-dark-theme=0/gtk-application-prefer-dark-theme=1/' ~/.config/gtk-3.0/settings.ini
     # change alacritty theme to dark
     sed -i 's/light/dark/' ~/.config/alacritty/alacritty.yml

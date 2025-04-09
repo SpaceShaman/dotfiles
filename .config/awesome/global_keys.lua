@@ -41,13 +41,13 @@ local global_keys = {
     },
     {
         modkeys = { MODKEY },
-        key = "w",
+        key = "d",
         action = awful.tag.viewnext,
     },
     -- client
     {
         modkeys = { MODKEY },
-        key = "d",
+        key = "f",
         action = function()
             awful.client.focus.byidx(1)
         end,
@@ -142,7 +142,7 @@ local global_keys = {
     -- applicaons
     {
         modkeys = { MODKEY },
-        key = "f",
+        key = "b",
         action = function()
             awful.spawn("firefox")
         end,

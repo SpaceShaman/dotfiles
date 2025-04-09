@@ -7,14 +7,6 @@ local MODKEY = "Mod4"
 local client_keys = {
     {
         modkeys = { MODKEY, },
-        key = "f",
-        action = function(c)
-            c.fullscreen = not c.fullscreen
-            c:raise()
-        end,
-    },
-    {
-        modkeys = { MODKEY, },
         key = "q",
         action = function(c) c:kill() end,
     },
@@ -55,12 +47,12 @@ local client_keys = {
     -- Swap clients
     {
         modkeys = { MODKEY, "Shift" },
-        key = "d",
+        key = "a",
         action = function() awful.client.swap.byidx(1) end,
     },
     {
         modkeys = { MODKEY, "Shift" },
-        key = "a",
+        key = "f",
         action = function() awful.client.swap.byidx(-1) end,
     },
     {

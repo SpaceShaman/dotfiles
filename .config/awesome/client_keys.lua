@@ -18,28 +18,28 @@ local client_keys = {
     -- Move client to screen
     {
         modkeys = { MODKEY, "Shift" },
-        key = "Left",
+        key = "h",
         action = function(c)
             move_to_screen_by_direction("left", c)
         end,
     },
     {
         modkeys = { MODKEY, "Shift" },
-        key = "Right",
+        key = "l",
         action = function(c)
             move_to_screen_by_direction("right", c)
         end,
     },
     {
         modkeys = { MODKEY, "Shift" },
-        key = "Up",
+        key = "k",
         action = function(c)
             move_to_screen_by_direction("up", c)
         end,
     },
     {
         modkeys = { MODKEY, "Shift" },
-        key = "Down",
+        key = "j",
         action = function(c)
             move_to_screen_by_direction("down", c)
         end,

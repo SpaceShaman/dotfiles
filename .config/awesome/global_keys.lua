@@ -62,53 +62,53 @@ local global_keys = {
     -- screen
     {
         modkeys = { MODKEY },
-        key = "Right",
+        key = "l",
         action = function() awful.screen.focus_bydirection("right") end,
     },
     {
         modkeys = { MODKEY },
-        key = "Left",
+        key = "h",
         action = function() awful.screen.focus_bydirection("left") end,
     },
     {
         modkeys = { MODKEY },
-        key = "Up",
+        key = "k",
         action = function() awful.screen.focus_bydirection("up") end,
     },
     {
         modkeys = { MODKEY },
-        key = "Down",
+        key = "j",
         action = function() awful.screen.focus_bydirection("down") end,
     },
     -- layout
     {
         modkeys = { MODKEY, "Control" },
-        key = "Right",
+        key = "l",
         action = function() awful.tag.incmwfact(0.05) end,
     },
     {
         modkeys = { MODKEY, "Control" },
-        key = "Left",
+        key = "h",
         action = function() awful.tag.incmwfact(-0.05) end,
     },
     {
         modkeys = { MODKEY, ALTKEY },
-        key = "Right",
+        key = "l",
         action = function() awful.tag.incncol(1, nil, true) end,
     },
     {
         modkeys = { MODKEY, ALTKEY },
-        key = "Left",
+        key = "h",
         action = function() awful.tag.incncol(-1, nil, true) end,
     },
     {
         modkeys = { MODKEY, ALTKEY },
-        key = "Up",
+        key = "k",
         action = function() awful.tag.incnmaster(1, nil, true) end,
     },
     {
         modkeys = { MODKEY, ALTKEY },
-        key = "Down",
+        key = "j",
         action = function() awful.tag.incnmaster(-1, nil, true) end,
     },
     {

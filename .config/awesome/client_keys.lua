@@ -55,6 +55,31 @@ local client_keys = {
         key = "f",
         action = function() awful.client.swap.byidx(-1) end,
     },
+    -- Move client to next tag
+    {
+        modkeys = { MODKEY, "Shift" },
+        key = "d",
+        action = function(c)
+            local screen = awful.screen.focused()
+            local tag = screen.tags[screen.selected_tag.index + 1]
+            if tag then
+                c:move_to_tag(tag)
+                awful.tag.viewnext()
+            end
+        end,
+    },
+    {
+        modkeys = { MODKEY, "Shift" },
+        key = "s",
+        action = function(c)
+            local screen = awful.screen.focused()
+            local tag = screen.tags[screen.selected_tag.index - 1]
+            if tag then
+                c:move_to_tag(tag)
+                awful.tag.viewprev()
+            end
+        end,
+    },
     {
         modkeys = { MODKEY, },
         key = "Tab",

@@ -1,6 +1,6 @@
 {
   "editor.suggestSelection": "first",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "none",
   "python.languageServer": "Pylance",
   "python.globalModuleInstallation": true,
   "git.enableSmartCommit": true,
@@ -49,7 +49,7 @@
   "indentRainbow.colorOnWhiteSpaceOnly": true,
   "python.analysis.autoImportCompletions": true,
   "python.testing.pytestEnabled": true,
-  "python.analysis.exclude": ["**/migrations/*.py", "**/node_modules/"],
+  "python.analysis.exclude": ["**/node_modules/", "**/migrations/*.py"],
   "python.analysis.completeFunctionParens": true,
   "workbench.iconTheme": "material-icon-theme",
   "zenMode.centerLayout": false,
@@ -111,7 +111,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  "sourcery.token": "",
+  "sourcery.token": "user_kiWEfK5FxShwgM_Y65nrx0hSvR06o0TQWSkfogoHnUDy2Hvg5cnJnlyFkVc",
   "git.openRepositoryInParentFolders": "never",
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.defaultProfile.linux": "fish",
@@ -130,7 +130,6 @@
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
-  "python.diagnostics.sourceMapsEnabled": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "flake8.args": ["--ignore=E501,E203,W503,E704"],
   "python.analysis.diagnosticMode": "workspace",
@@ -149,7 +148,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "gitlens.launchpad.indicator.enabled": false,
-  "github.copilot.editor.enableAutoCompletions": true,
   "python.analysis.extraPaths": ["app"],
   "github.copilot.chat.localeOverride": "pl",
   "zenMode.showTabs": "none",
@@ -160,8 +158,6 @@
   "zenMode.restore": false,
   "workbench.editor.enablePreview": false,
   "workbench.editor.editorActionsLocation": "hidden",
-  "workbench.activityBar.location": "hidden",
-  "window.menuBarVisibility": "toggle",
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -185,9 +181,8 @@
     "MD041": false
   },
   "css.lint.unknownAtRules": "ignore",
-  "testing.openTesting": "openExplorerOnTestStart",
   "testing.showCoverageInExplorer": false,
-  "workbench.colorTheme": "Ayu Dark",
+  "workbench.colorTheme": "Ayu Dark Bordered",
   "workbench.colorCustomizations": {
     "[*Dark*]": {
       "editor.background": "#000000",
@@ -202,8 +197,34 @@
       "editorGroupHeader.tabsBackground": "#000000",
       "editorGroupHeader.tabsBorder": "#000000",
       "tab.activeBackground": "#000000",
-      "tab.inactiveBackground": "#000000",
-      "tab.border": "#000000"
+      "tab.inactiveBackground": "#000000"
     }
-  }
+  },
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "python.analysis.typeCheckingMode": "basic",
+  "testing.automaticallyOpenTestResults": "openExplorerOnTestStart",
+  "vue.server.hybridMode": "typeScriptPluginOnly",
+  "settingsSync.ignoredSettings": ["-python.defaultInterpreterPath"],
+  "redhat.telemetry.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "window.commandCenter": false,
+  "workbench.commandPalette.experimental.suggestCommands": true,
+  "window.customTitleBarVisibility": "auto",
+  "window.titleBarStyle": "native",
+  "prettier.quoteProps": "consistent",
+  "prettier.semi": false,
+  "eslint.useFlatConfig": true,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "nuxtr.openItemsAfterCreation": true,
+  "nuxtr.vueFiles.style.addStyleTag": false,
+  "editor.inlayHints.maximumLength": 79,
+  "github.copilot.selectedCompletionModel": "",
+  "chat.agent.enabled": true,
+  "editor.fontSize": 15,
+  "window.zoomLevel": 0.5,
+  "window.menuBarVisibility": "toggle",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.vimrc"
 }

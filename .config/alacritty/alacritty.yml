@@ -18,3 +18,5 @@ mouse:
 
 key_bindings:
     - { key: Back, mods: Control, chars: "\x1b\x7f" } # Delete word
+    - { key: C, mods: Control, action: Copy }
+    - { key: V, mods: Control, action: Paste }

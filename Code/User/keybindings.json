@@ -82,6 +82,10 @@
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.debug'"
   },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
   //////////////
   // Terminal //
   //////////////

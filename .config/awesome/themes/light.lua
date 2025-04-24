@@ -2,19 +2,6 @@
 -- Ayu Light --
 ---------------
 
-local background = '#FCFCFC'
-local foreground = '#5C6166'
-
-local black      = '#010101'
-local red        = '#e7666a'
-local green      = '#80ab24'
-local yellow     = '#eba54d'
-local blue       = '#4196df'
-local magenta    = '#9870c3'
-local cyan       = '#51b891'
-local white      = '#c1c1c1'
-
-
 local theme_assets                              = require("beautiful.theme_assets")
 local xresources                                = require("beautiful.xresources")
 local dpi                                       = xresources.apply_dpi
@@ -24,24 +11,38 @@ local themes_path                               = gfs.get_themes_dir()
 
 local theme                                     = {}
 
+theme.background                                = '#FCFCFC'
+theme.foreground                                = '#5C6166'
+
+theme.black                                     = '#000000'
+theme.red                                       = '#e7666a'
+theme.green                                     = '#80ab24'
+theme.yellow                                    = '#eba54d'
+theme.blue                                      = '#4196df'
+theme.magenta                                   = '#9870c3'
+theme.cyan                                      = '#51b891'
+theme.white                                     = '#c1c1c1'
+
+theme.border_focus_normal                       = theme.magenta
+
 theme.font                                      = "sans 8"
 
-theme.bg_normal                                 = background
-theme.bg_focus                                  = background
-theme.bg_urgent                                 = yellow
-theme.bg_minimize                               = background
+theme.bg_normal                                 = theme.background
+theme.bg_focus                                  = theme.background
+theme.bg_urgent                                 = theme.yellow
+theme.bg_minimize                               = theme.background
 theme.bg_systray                                = theme.bg_normal
 
-theme.fg_normal                                 = foreground
-theme.fg_focus                                  = yellow
-theme.fg_urgent                                 = yellow
-theme.fg_minimize                               = foreground
+theme.fg_normal                                 = theme.foreground
+theme.fg_focus                                  = theme.yellow
+theme.fg_urgent                                 = theme.yellow
+theme.fg_minimize                               = theme.foreground
 
 theme.useless_gap                               = dpi(0)
-theme.border_width                              = dpi(2)
-theme.border_normal                             = background
-theme.border_focus                              = blue
-theme.border_marked                             = yellow
+theme.border_width                              = dpi(3)
+theme.border_normal                             = theme.black
+theme.border_focus                              = theme.border_focus_normal
+theme.border_marked                             = theme.yellow
 
 -- There are other variable sets
 -- overriding the default one when

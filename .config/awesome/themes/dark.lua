@@ -2,47 +2,47 @@
 -- Ayu Dark with complete dark background --
 ------------------------
 
+local theme_assets        = require("beautiful.theme_assets")
+local xresources          = require("beautiful.xresources")
+local dpi                 = xresources.apply_dpi
 
+local gfs                 = require("gears.filesystem")
+local themes_path         = gfs.get_themes_dir()
 
-local theme_assets  = require("beautiful.theme_assets")
-local xresources    = require("beautiful.xresources")
-local dpi           = xresources.apply_dpi
+local theme               = {}
 
-local gfs           = require("gears.filesystem")
-local themes_path   = gfs.get_themes_dir()
+theme.background          = '#000000'
+theme.foreground          = '#B3B1AD'
 
-local theme         = {}
+theme.black               = '#01060E'
+theme.red                 = '#EA6C73'
+theme.green               = '#91B362'
+theme.yellow              = '#F9AF4F'
+theme.blue                = '#53BDFA'
+theme.magenta             = '#FAE994'
+theme.cyan                = '#90E1C6'
+theme.white               = '#C7C7C7'
 
-theme.background    = '#000000'
-theme.foreground    = '#B3B1AD'
+theme.border_focus_normal = theme.foreground
 
-theme.black         = '#01060E'
-theme.red           = '#EA6C73'
-theme.green         = '#91B362'
-theme.yellow        = '#F9AF4F'
-theme.blue          = '#53BDFA'
-theme.magenta       = '#FAE994'
-theme.cyan          = '#90E1C6'
-theme.white         = '#C7C7C7'
+theme.font                = "sans 8"
 
-theme.font          = "sans 8"
+theme.bg_normal           = theme.background
+theme.bg_focus            = theme.background
+theme.bg_urgent           = theme.yellow
+theme.bg_minimize         = theme.background
+theme.bg_systray          = theme.bg_normal
 
-theme.bg_normal     = theme.background
-theme.bg_focus      = theme.background
-theme.bg_urgent     = theme.yellow
-theme.bg_minimize   = theme.background
-theme.bg_systray    = theme.bg_normal
+theme.fg_normal           = theme.foreground
+theme.fg_focus            = theme.yellow
+theme.fg_urgent           = theme.yellow
+theme.fg_minimize         = theme.foreground
 
-theme.fg_normal     = theme.foreground
-theme.fg_focus      = theme.yellow
-theme.fg_urgent     = theme.yellow
-theme.fg_minimize   = theme.foreground
-
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
-theme.border_normal = theme.background
-theme.border_focus  = theme.foreground
-theme.border_marked = theme.yellow
+theme.useless_gap         = dpi(0)
+theme.border_width        = dpi(1)
+theme.border_normal       = theme.background
+theme.border_focus        = theme.border_focus_normal
+theme.border_marked       = theme.yellow
 
 
 -- There are other variable sets

@@ -2,46 +2,48 @@
 -- Ayu Dark with complete dark background --
 ------------------------
 
-local background = '#000000'
-local foreground = '#B3B1AD'
-
-local black      = '#01060E'
-local red        = '#EA6C73'
-local green      = '#91B362'
-local yellow     = '#F9AF4F'
-local blue       = '#53BDFA'
-local magenta    = '#FAE994'
-local cyan       = '#90E1C6'
-local white      = '#C7C7C7'
 
 
-local theme_assets                              = require("beautiful.theme_assets")
-local xresources                                = require("beautiful.xresources")
-local dpi                                       = xresources.apply_dpi
+local theme_assets  = require("beautiful.theme_assets")
+local xresources    = require("beautiful.xresources")
+local dpi           = xresources.apply_dpi
 
-local gfs                                       = require("gears.filesystem")
-local themes_path                               = gfs.get_themes_dir()
+local gfs           = require("gears.filesystem")
+local themes_path   = gfs.get_themes_dir()
 
-local theme                                     = {}
+local theme         = {}
 
-theme.font                                      = "sans 8"
+theme.background    = '#000000'
+theme.foreground    = '#B3B1AD'
 
-theme.bg_normal                                 = background
-theme.bg_focus                                  = background
-theme.bg_urgent                                 = yellow
-theme.bg_minimize                               = background
-theme.bg_systray                                = theme.bg_normal
+theme.black         = '#01060E'
+theme.red           = '#EA6C73'
+theme.green         = '#91B362'
+theme.yellow        = '#F9AF4F'
+theme.blue          = '#53BDFA'
+theme.magenta       = '#FAE994'
+theme.cyan          = '#90E1C6'
+theme.white         = '#C7C7C7'
 
-theme.fg_normal                                 = foreground
-theme.fg_focus                                  = yellow
-theme.fg_urgent                                 = yellow
-theme.fg_minimize                               = foreground
+theme.font          = "sans 8"
 
-theme.useless_gap                               = dpi(0)
-theme.border_width                              = dpi(1)
-theme.border_normal                             = background
-theme.border_focus                              = foreground
-theme.border_marked                             = yellow
+theme.bg_normal     = theme.background
+theme.bg_focus      = theme.background
+theme.bg_urgent     = theme.yellow
+theme.bg_minimize   = theme.background
+theme.bg_systray    = theme.bg_normal
+
+theme.fg_normal     = theme.foreground
+theme.fg_focus      = theme.yellow
+theme.fg_urgent     = theme.yellow
+theme.fg_minimize   = theme.foreground
+
+theme.useless_gap   = dpi(0)
+theme.border_width  = dpi(1)
+theme.border_normal = theme.background
+theme.border_focus  = theme.foreground
+theme.border_marked = theme.yellow
+
 
 -- There are other variable sets
 -- overriding the default one when

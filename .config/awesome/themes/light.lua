@@ -38,7 +38,7 @@ theme.fg_urgent                                 = yellow
 theme.fg_minimize                               = foreground
 
 theme.useless_gap                               = dpi(0)
-theme.border_width                              = dpi(1)
+theme.border_width                              = dpi(2)
 theme.border_normal                             = background
 theme.border_focus                              = blue
 theme.border_marked                             = yellow

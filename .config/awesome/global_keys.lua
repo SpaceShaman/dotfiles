@@ -1,13 +1,34 @@
 local awful = require("awful")
+local beautiful = require("beautiful")
 local brightness_widget = require("widgets.brightness-widget.brightness")
 local get_keys_table = require("utils.get_keys_table")
 local bind_key_numbers_to_tags = require("utils.bind_key_numbers_to_tags")
+local change_keyboard_layer_highlight = require("utils.change_keyboard_layer_highlight")
 
 local MODKEY = "Mod4"
 local ALTKEY = "Mod1"
 local TERMINAL = "x-terminal-emulator"
 
 local global_keys = {
+    -- layer
+    {
+        key = "0xff27",
+        action = function()
+            change_keyboard_layer_highlight(0)
+        end
+    },
+    {
+        key = "0xff22",
+        action = function()
+            change_keyboard_layer_highlight(1)
+        end
+    },
+    {
+        key = "0xff31",
+        action = function()
+            change_keyboard_layer_highlight(2)
+        end
+    },
     -- awesome
     {
         modkeys = { MODKEY },

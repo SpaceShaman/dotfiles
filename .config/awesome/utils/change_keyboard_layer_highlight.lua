@@ -1,9 +1,9 @@
 local beautiful = require("beautiful")
 
 local function change_keyboard_layer_highlight(layer)
-    local color = beautiful.border_focus
+    local color = beautiful.layer_highlight
     if layer == 0 then
-        color = beautiful.border_focus_normal
+        color = beautiful.layer_highlight_normal
     elseif layer == 1 then
         color = beautiful.green
     elseif layer == 2 then

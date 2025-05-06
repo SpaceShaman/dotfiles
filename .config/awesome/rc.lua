@@ -53,7 +53,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/light.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/dark.lua")
 
 
 

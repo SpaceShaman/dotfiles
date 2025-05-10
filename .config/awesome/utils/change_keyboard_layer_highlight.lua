@@ -2,6 +2,7 @@ local beautiful = require("beautiful")
 
 local function change_client_color(c, color)
     c.border_color = color
+    c.border_focus = color
 end
 
 local function change_keyboard_layer_highlight(layer)
@@ -14,11 +15,7 @@ local function change_keyboard_layer_highlight(layer)
         color = beautiful.red
     end
     change_client_color(beautiful, color)
-    -- update the border color only for the focused client
-    local c = client.focus
-    if c then
-        change_client_color(c, color)
-    end
+    change_client_color(client.focus, color)
 end
 
 return change_keyboard_layer_highlight

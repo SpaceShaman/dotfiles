@@ -41,7 +41,7 @@ theme.fg_minimize            = theme.foreground
 theme.useless_gap            = dpi(0)
 theme.border_width           = dpi(1)
 theme.border_normal          = theme.background
-theme.border_focus           = theme.layer_highlight_normal
+theme.border_focus           = theme.foreground
 theme.border_marked          = theme.yellow
 
 

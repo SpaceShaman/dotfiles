@@ -23,7 +23,7 @@ theme.magenta                                   = '#9870c3'
 theme.cyan                                      = '#51b891'
 theme.white                                     = '#c1c1c1'
 
-theme.layer_highlight_normal                    = theme.magenta
+theme.layer_highlight_normal                    = theme.foreground
 
 theme.font                                      = "sans 8"
 
@@ -41,7 +41,7 @@ theme.fg_minimize                               = theme.foreground
 theme.useless_gap                               = dpi(0)
 theme.border_width                              = dpi(3)
 theme.border_normal                             = theme.black
-theme.border_focus                              = theme.layer_highlight_normal
+theme.border_focus                              = theme.foreground
 theme.border_marked                             = theme.yellow
 
 -- There are other variable sets

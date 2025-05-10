@@ -9,6 +9,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local setup_theme = require("utils.setup_theme")
 
 
 
@@ -51,11 +52,7 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/dark.lua")
-
-
+setup_theme()
 
 -- This is used later as the default terminal and editor to run.
 local terminal = "x-terminal-emulator"

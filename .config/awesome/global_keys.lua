@@ -1,9 +1,9 @@
 local awful = require("awful")
-local beautiful = require("beautiful")
 local brightness_widget = require("widgets.brightness-widget.brightness")
 local get_keys_table = require("utils.get_keys_table")
 local bind_key_numbers_to_tags = require("utils.bind_key_numbers_to_tags")
 local change_keyboard_layer_highlight = require("utils.change_keyboard_layer_highlight")
+local setup_theme = require("utils.setup_theme")
 
 local MODKEY = "Mod4"
 local ALTKEY = "Mod1"
@@ -147,6 +147,7 @@ local global_keys = {
         key = "t",
         action = function()
             awful.spawn("bash /home/ton618/.scripts/theme.sh")
+            setup_theme()
         end,
     },
     -- launch

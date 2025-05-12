@@ -16,32 +16,43 @@
   // Moving editor //
   ///////////////////
   {
-    "key": "ctrl+alt+up",
-    "command": "workbench.action.moveEditorToAboveGroup"
-  },
-  {
-    "key": "ctrl+alt+down",
-    "command": "workbench.action.moveEditorToBelowGroup"
-  },
-  {
-    "key": "ctrl+alt+left",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.moveEditorToLeftGroup"
   },
   {
-    "key": "ctrl+alt+right",
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.moveEditorToBelowGroup"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.moveEditorToAboveGroup"
+  },
+  {
+    "key": "ctrl+alt+;",
     "command": "workbench.action.moveEditorToRightGroup"
   },
   {
-    "key": "ctrl+alt+n",
+    "key": "alt+n",
     "command": "workbench.action.moveEditorToNewWindow"
   },
+  /////////////////////
+  // Focusing editor //
+  /////////////////////
   {
-    "key": "ctrl+alt+left",
-    "command": "-workbench.action.moveEditorToPreviousGroup"
+    "key": "alt+j",
+    "command": "workbench.action.focusLeftGroup"
   },
   {
-    "key": "ctrl+alt+right",
-    "command": "-workbench.action.moveEditorToNextGroup"
+    "key": "alt+k",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "alt+;",
+    "command": "workbench.action.focusRightGroup"
   },
   /////////////////////
   // Resizing editor //
@@ -66,24 +77,31 @@
   // Left Sidebar //
   ///////////////////
   {
-    "key": "ctrl+g",
+    "key": "alt+g",
     "command": "workbench.view.scm"
   },
   {
-    "key": "ctrl+e",
+    "key": "alt+e",
     "command": "workbench.view.explorer"
   },
   {
-    "key": "ctrl+t",
+    "key": "alt+t",
     "command": "workbench.view.testing.focus"
   },
   {
-    "key": "ctrl+shift+d",
-    "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.debug'"
+    "key": "alt+f",
+    "command": "workbench.view.search"
   },
   {
-    "key": "ctrl+shift+b",
+    "key": "alt+d",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.view.extensions"
+  },
+  {
+    "key": "alt+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   //////////////

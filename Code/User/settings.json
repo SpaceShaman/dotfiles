@@ -182,7 +182,7 @@
   },
   "css.lint.unknownAtRules": "ignore",
   "testing.showCoverageInExplorer": false,
-  "workbench.colorTheme": "Ayu Dark Bordered",
+  "workbench.colorTheme": "Ayu Light Bordered",
   "workbench.colorCustomizations": {
     "[*Dark*]": {
       "editor.background": "#000000",
@@ -223,8 +223,19 @@
   "github.copilot.selectedCompletionModel": "",
   "chat.agent.enabled": true,
   "editor.fontSize": 15,
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 0.7,
+  "workbench.activityBar.location": "hidden",
   "window.menuBarVisibility": "toggle",
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "$HOME/.vimrc"
+  "vim.vimrc.path": "$HOME/.vimrc",
+  "vim.hlsearch": true,
+  "editor.lineNumbers": "relative",
+  "vim.handleKeys": {
+    "<C-i>": false,
+    "<C-p>": false,
+    "<C-w>": false,
+    "<C-pageup>": false,
+    "<C-pagedown>": false,
+    "<C-j>": false
+  }
 }

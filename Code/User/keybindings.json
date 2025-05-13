@@ -183,6 +183,9 @@
     "command": "-list.select",
     "when": "listFocus && !inputFocus"
   },
+  ////////
+  // AI //
+  ////////
   {
     "key": "shift+alt+i",
     "command": "editor.action.inlineSuggest.trigger",

@@ -182,7 +182,7 @@
   },
   "css.lint.unknownAtRules": "ignore",
   "testing.showCoverageInExplorer": false,
-  "workbench.colorTheme": "Ayu Light Bordered",
+  "workbench.colorTheme": "Ayu Dark Bordered",
   "workbench.colorCustomizations": {
     "[*Dark*]": {
       "editor.background": "#000000",

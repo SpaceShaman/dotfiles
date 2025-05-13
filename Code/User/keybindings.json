@@ -108,9 +108,37 @@
   // Terminal //
   //////////////
   {
-    "key": "ctrl+\\",
+    "key": "ctrl+s",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  /////////////////////
+  // Focusing terminal //
+  /////////////////////
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+;",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
   },
   /////////
   // Vim //
@@ -154,5 +182,15 @@
     "key": "l",
     "command": "-list.select",
     "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+alt+i",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "alt+\\",
+    "command": "-editor.action.inlineSuggest.trigger",
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
   }
 ]

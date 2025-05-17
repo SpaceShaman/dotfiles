@@ -3,12 +3,20 @@
   // File editor //
   /////////////////
   {
-    "key": "shift+alt+up",
+    "key": "alt+Left",
+    "command": "editor.action.outdentLines"
+  },
+  {
+    "key": "alt+Right",
+    "command": "editor.action.indentLines"
+  },
+  {
+    "key": "shift+alt+Up",
     "command": "editor.action.copyLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+down",
+    "key": "shift+alt+Down",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },

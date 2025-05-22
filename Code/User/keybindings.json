@@ -20,6 +20,14 @@
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
+  {
+    "key": "ctrl+alt+Left",
+    "command": "editor.foldRecursively"
+  },
+  {
+    "key": "ctrl+alt+Right",
+    "command": "editor.unfoldRecursively"
+  },
   /////////////////////
   // Focusing editor //
   /////////////////////

@@ -16,6 +16,8 @@ noremap <A-v> <C-w>v
 noremap <A-h> <C-w>s
 " new tab with alt + t
 noremap <A-t> :tabnew<CR>
+" close all tabs witout curent ctrl + q
+noremap <C-q> :tabonly<CR>
 " close window with ctrl + w
 noremap <C-w> <C-w>c
 " open file with ctrl + o

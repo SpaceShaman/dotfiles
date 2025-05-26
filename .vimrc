@@ -1,4 +1,5 @@
 " use jkl; instead of hjkl as ergonomic alternative over historic
+let mapleader=" "
 noremap ' ;
 noremap ; l
 noremap l k
@@ -7,15 +8,15 @@ noremap j h
 noremap L 5k
 noremap K 5j
 " move window focus with alt + jkl;
-noremap <A-;> <C-w>l
-noremap <A-l> <C-w>k
-noremap <A-k> <C-w>j
-noremap <A-j> <C-w>h
+noremap <leader>; <C-w>l
+noremap <leader>l <C-w>k
+noremap <leader>k <C-w>j
+noremap <leader>j <C-w>h
 " split window with alt + vh
-noremap <A-v> <C-w>v
-noremap <A-h> <C-w>s
+noremap <leader>v <C-w>v
+noremap <leader>h <C-w>s
 " new tab with alt + t
-noremap <A-t> :tabnew<CR>
+noremap <leader>t :tabnew<CR>
 " close all tabs witout curent ctrl + q
 noremap <C-q> :tabonly<CR>
 " close window with ctrl + w

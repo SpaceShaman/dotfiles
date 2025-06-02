@@ -29,12 +29,8 @@ noremap <C-s> :w<CR>
 noremap <leader>s <leader><leader>s
 noremap <leader>f <leader><leader>f
 noremap <leader>F <leader><leader>F
-noremap <leader>t <leader><leader>t
-noremap <leader>T <leader><leader>T
 noremap <leader>w <leader><leader>w
 noremap <leader>b <leader><leader>b
-noremap <leader>l <leader><leader>l
-noremap <leader>h <leader><leader>h
 noremap <leader>e <leader><leader>e
 noremap <leader>ge <leader><leader>ge
 noremap <leader>/ <leader><leader>/

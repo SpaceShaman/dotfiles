@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$PATH:/opt/nvim/"
+
 # run fish shell
 export SHELL=`which sh`
 fish

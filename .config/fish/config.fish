@@ -5,6 +5,7 @@ if status is-interactive
 	alias c=oco
 	alias w=wifi
 	alias p=python
+	alias v='nvim'
 	alias t='trans -b :en'
 	alias s='screen'
 	alias co='code .; exit'

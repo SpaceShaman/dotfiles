@@ -6,6 +6,8 @@ if status is-interactive
 	alias w=wifi
 	alias p=python
 	alias v='nvim'
+	alias vim='nvim'
+	alias f='fzf'
 	alias t='trans -b :en'
 	alias s='screen'
 	alias co='code .; exit'
@@ -15,7 +17,7 @@ if status is-interactive
 	alias wifi='bash ~/.scripts/wifi.sh'
 	alias screen='bash ~/.scripts/screen.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
-	export EDITOR=vim
+	export EDITOR=nvim
 	export TERM=xterm-256color
 	pyenv init - | source
 end

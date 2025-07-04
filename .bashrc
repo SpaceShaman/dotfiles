@@ -119,6 +119,6 @@ fi
 export PATH="$PATH:/opt/nvim/"
 
 # run fish shell
-export SHELL=`which sh`
-fish
-exit
+# export SHELL=`which sh`
+# fish
+# exit

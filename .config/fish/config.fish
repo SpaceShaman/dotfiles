@@ -17,6 +17,7 @@ if status is-interactive
 	alias wifi='bash ~/.scripts/wifi.sh'
 	alias screen='bash ~/.scripts/screen.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
+	export PATH="$PATH:/opt/nvim/"
 	export EDITOR=nvim
 	export TERM=xterm-256color
 	pyenv init - | source

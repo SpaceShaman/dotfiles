@@ -21,4 +21,5 @@ if status is-interactive
 	export EDITOR=nvim
 	export TERM=xterm-256color
 	pyenv init - | source
+  autopy
 end

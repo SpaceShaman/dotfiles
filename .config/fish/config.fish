@@ -1,7 +1,6 @@
 if status is-interactive
 	set fish_greeting
 	set PATH "$HOME/.local/bin:$PATH"
-  source ~/.config/fish/pyautoenv/pyautoenv.fish
 	alias g=sgpt
 	alias c=oco
 	alias w=wifi

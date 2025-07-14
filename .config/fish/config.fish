@@ -7,11 +7,11 @@ if status is-interactive
 	alias c=oco
 	alias w=wifi
 	alias p=python
-	alias v='nvim'
-	alias vim='nvim'
-	alias f='fzf'
+	alias v=nvim
+	alias vim=nvim
+  alias cat=batcat
 	alias t='trans -b :en'
-	alias s='screen'
+	alias s=screen
 	alias co='code .; exit'
 	alias release='bash ~/.scripts/release.sh'
 	alias update='bash ~/.scripts/update.sh'

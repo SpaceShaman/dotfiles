@@ -20,8 +20,8 @@ key_bindings:
     - { key: Back, mods: Control, chars: "\x1b\x7f" } # Delete word
     - { key: Semicolon, mods: Control, chars: "\u001b[25~" } # Ctrl-; = F13
     # Vi mode movement keys
+    - { key: Space, mods: Control, action: "ToggleViMode" }
     - { key: J, mode: "Vi|~Search", action: "Left" }
     - { key: K, mode: "Vi|~Search", action: "Down" }
     - { key: L, mode: "Vi|~Search", action: "Up" }
     - { key: Semicolon, mode: "Vi|~Search", action: "Right" }
-    - { key: Space, mods: Control, action: "ToggleViMode" }

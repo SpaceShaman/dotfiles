@@ -1,6 +1,7 @@
 if status is-interactive
 	set fish_greeting
   fzf_configure_bindings --variables=\e\cv
+  set --universal pure_enable_single_line_prompt true
 	set PATH "$HOME/.local/bin:$PATH"
 	alias g=sgpt
 	alias c=oco

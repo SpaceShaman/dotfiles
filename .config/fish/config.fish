@@ -4,7 +4,7 @@ if status is-interactive
   set --universal pure_enable_single_line_prompt true
 	set PATH "$HOME/.local/bin:$PATH"
 	alias g=sgpt
-	alias c='git add . && git commit'
+	alias c='git add . && git commit && git push'
 	alias w=wifi
 	alias p=python
 	alias v=nvim

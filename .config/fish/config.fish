@@ -4,7 +4,7 @@ if status is-interactive
   set --universal pure_enable_single_line_prompt true
 	set PATH "$HOME/.local/bin:$PATH"
 	alias g=sgpt
-	alias c='git add . && git commit && git push'
+	alias c=oco
 	alias w=wifi
 	alias p=python
 	alias v=nvim
@@ -24,4 +24,5 @@ if status is-interactive
 	export TERM=xterm-256color
 	pyenv init - | source
   autopy
+  autoenv
 end

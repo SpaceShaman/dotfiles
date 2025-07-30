@@ -11,6 +11,7 @@ if status is-interactive
 	alias vim=nvim
   alias cat=batcat
 	alias t='trans -b :en'
+  alias tp='trans -b :pl'
 	alias s=screen
 	alias co='code .; exit'
 	alias release='bash ~/.scripts/release.sh'

@@ -21,6 +21,8 @@ if status is-interactive
 	alias screen='bash ~/.scripts/screen.sh'
 	export PYTHONSTARTUP=$HOME/.config/pythonstartup
 	export PATH="$PATH:/opt/nvim/"
+  export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+  export PATH="$ASDF_DATA_DIR/shims:$PATH"
 	export EDITOR=nvim
 	export TERM=xterm-256color
 	pyenv init - | source

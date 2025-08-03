@@ -12,8 +12,10 @@ fi
 
 echo -e "${BOLD}${YELLOW}Updating Elixir and Erlang...${RESET}"
 asdf plugin add erlang
-asdf install erlang latest
 asdf plugin add elixir
+asdf update
+asdf plugin-update
+asdf install erlang latest
 asdf install elixir latest
 
 echo -e "${BOLD}${GREEN}Elixir and Erlang are installed and updated.${RESET}"

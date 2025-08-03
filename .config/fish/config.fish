@@ -10,6 +10,7 @@ if status is-interactive
 	alias v=nvim
 	alias vim=nvim
   alias cat=batcat
+  alias l=lazygit
 	alias t='trans -b :en'
   alias tp='trans -b :pl'
 	alias s=screen

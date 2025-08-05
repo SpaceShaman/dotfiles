@@ -25,7 +25,7 @@ n prune
 npm install -g npm@latest
 
 # Install npm packages
-npm install -g opencommit
+npm install -g opencommit markdownlint-cli2
 
 # Install fisher plugins
 chown -R $USER ~/.config/fish

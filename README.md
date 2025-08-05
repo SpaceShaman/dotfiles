@@ -22,4 +22,3 @@ stow .
 ```bash
 bash setup_scripts/setup.sh
 ```
-

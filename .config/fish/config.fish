@@ -11,6 +11,8 @@ if status is-interactive
 	alias vim=nvim
   alias cat=batcat
   alias l=lazygit
+  alias cp='rsync -ah --info=progress2'
+  alias mv='rsync -ah --info=progress2 --remove-source-files'
 	alias t='trans -b :en'
   alias tp='trans -b :pl'
 	alias s=screen

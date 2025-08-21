@@ -1,35 +1,27 @@
 #!/bin/bash
 
-bash copy.sh
+BOLD='\033[1m'
+GREEN='\033[32m'
+YELLOW='\033[33m'
+RESET='\033[0m'
 
-apt update && apt upgrade -y
-apt install -y software-properties-common
-apt-add-repository -y ppa:fish-shell/release-3 
-apt-add-repository -y ppa:neovim-ppa/stable
-apt-add-repository -y ppa:aslatter/ppa
-apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip translate-shell ripgrep fd-find bat stow rsync
+echo -e "${BOLD}${GREEN}Starting setup...${RESET}"
 
-# setup bat
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
+bash ./install_apt_packages.sh
+bash ./install_usb_install_usb_hdmi_drivers.sh
+bash ./install_nvim.sh
+bash ./install_docker.sh
+bash ./install_lazygit.sh
+bash ./install_poetry_and_pyenv.sh
+bash ./install_uv.sh
+bash ./install_asdf.sh
+bash ./install_elixir.sh
+bash ./install_elixir_lsp.sh
+bash ./install_node_and_install_npm_packages.sh
+bash ./install_fisher_plugins.sh
 
-# Set neovim as default editor
-update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+echo -e "${BOLD}${YELLOW}Syncing dotfiles with system via stow...${RESET}"
+stow -t ~ -d ~/dotfiles
+echo -e "${BOLD}${GREEN}Dotfiles synced.${RESET}"
 
-# Update nodejs and npm
-npm install -g n
-n lts
-n prune
-npm install -g npm@latest
-
-# Install npm packages
-npm install -g opencommit markdownlint-cli2
-
-# Install fisher plugins
-chown -R $USER ~/.config/fish
-fish -c "fisher update"
-
-# Set hotkey for emoji panel to prevent conflict with vscode hotkeys
-gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Control>semicolon']" 
+echo -e "${BOLD}${GREEN}Setup finished.${RESET}"

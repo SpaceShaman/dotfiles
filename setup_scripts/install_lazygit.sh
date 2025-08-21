@@ -10,7 +10,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 
 tar xf lazygit.tar.gz lazygit
 
-sudo install lazygit -D -t /usr/local/bin/
+install lazygit -D -t /usr/local/bin/
 
 rm lazygit.tar.gz lazygit
 

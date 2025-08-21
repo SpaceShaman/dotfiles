@@ -4,10 +4,10 @@
 wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
 
 # Install the DisplayLink APT package keyring
-sudo apt install ./synaptics-repository-keyring.deb
+apt install ./synaptics-repository-keyring.deb
 
 # Update your APT package cache
-sudo apt update
+apt update
 
 # Install the DisplayLink driver provided by Synaptics.com, the official source
-sudo apt install displaylink-driver
+apt install displaylink-driver

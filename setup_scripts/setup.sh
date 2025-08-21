@@ -24,7 +24,7 @@ bash ./install_uv.sh
 bash ./install_asdf.sh
 bash ./install_elixir.sh
 bash ./install_elixir_lsp.sh
-bash ./install_node_and_install_npm_packages.sh
+bash ./update_node_and_install_npm_packages.sh
 bash ./install_fisher_plugins.sh
 
 echo -e "${BOLD}${GREEN}Setup finished.${RESET}"

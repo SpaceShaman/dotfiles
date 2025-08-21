@@ -12,6 +12,7 @@ set -e
 trap 'echo -e "${BOLD}${RED}Wystąpił błąd. Przerywam instalację.${RESET}"' ERR
 
 bash ./install_apt_packages.sh
+bash ./sync_dotfiles_with_system.sh
 bash ./install_usb_install_usb_hdmi_drivers.sh
 bash ./install_nvim.sh
 bash ./install_docker.sh
@@ -23,9 +24,5 @@ bash ./install_elixir.sh
 bash ./install_elixir_lsp.sh
 bash ./install_node_and_install_npm_packages.sh
 bash ./install_fisher_plugins.sh
-
-echo -e "${BOLD}${YELLOW}Syncing dotfiles with system via stow...${RESET}"
-stow -t ~ -d ~/dotfiles
-echo -e "${BOLD}${GREEN}Dotfiles synced.${RESET}"
 
 echo -e "${BOLD}${GREEN}Setup finished.${RESET}"

@@ -15,7 +15,7 @@ echo -e "${BOLD}${GREEN}Starting setup...${RESET}"
 bash ./install_apt_packages.sh
 bash ./sync_dotfiles_with_system.sh
 bash ./install_translate-shell.sh
-bash ./install_usb_install_usb_hdmi_drivers.sh
+bash ./install_usb_hdmi_drivers.sh
 bash ./install_nvim.sh
 bash ./install_docker.sh
 bash ./install_lazygit.sh

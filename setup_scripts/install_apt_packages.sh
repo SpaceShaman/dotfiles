@@ -8,10 +8,13 @@ RESET='\033[0m'
 echo -e "${BOLD}${YELLOW}Installing apt packages...${RESET}"
 
 apt update && apt upgrade -y
-apt install -y software-properties-common
-apt-add-repository -y ppa:fish-shell/release-3 
-apt-add-repository -y ppa:aslatter/ppa
-apt install -y fish curl neovim git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip translate-shell ripgrep fd-find bat stow rsync
+apt install curl
+
+# Add fish repo
+echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/4/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:4.list
+curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:4/Debian_13/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_4.gpg > /dev/null
+
+apt install -y fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip translate-shell ripgrep fd-find bat stow rsync
 
 echo -e "${BOLD}${GREEN}APT packages installed.${RESET}"
 

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+BOLD='\033[1m'
+GREEN='\033[32m'
+YELLOW='\033[33m'
+RED='\033[31m'
+RESET='\033[0m'
+
+echo -e "${BOLD}${YELLOW}Installing Docker...${RESET}"
+
 # Add Docker's official GPG key:
 apt-get update
 apt-get install ca-certificates curl
@@ -19,7 +27,11 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 
 # Manage Docker as a non-root user
 ##Create the docker group.
-groupadd docker
+# add docker group if it doesn't exist
+
+if ! grep -q docker /etc/group; then
+    groupadd docker
+fi
 
 #Add your user to the docker group.
 usermod -aG docker $USER
@@ -29,3 +41,5 @@ newgrp docker
 
 #Verify that you can run docker commands without sudo.
 docker run hello-world
+
+echo -e "${BOLD}${GREEN}Docker installed.${RESET}"

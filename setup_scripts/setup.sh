@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+trap 'echo -e "${BOLD}${RED}Wystąpił błąd. Przerywam instalację.${RESET}"' ERR
+
 BOLD='\033[1m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
@@ -8,8 +11,6 @@ RESET='\033[0m'
 
 echo -e "${BOLD}${GREEN}Starting setup...${RESET}"
 
-set -e
-trap 'echo -e "${BOLD}${RED}Wystąpił błąd. Przerywam instalację.${RESET}"' ERR
 
 bash ./install_apt_packages.sh
 bash ./sync_dotfiles_with_system.sh

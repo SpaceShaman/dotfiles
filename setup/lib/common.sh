@@ -21,4 +21,4 @@ function _frame() {
 
 function success() { _frame "${GREEN}" "✅" "$1"; }
 function error()   { _frame "${RED}"   "❌" "$1"; }
-function info()    { _frame "${BLUE}"  "ℹ️" "$1"; }
+function info()    { _frame "${BLUE}"  "ℹ️" "$1";  }

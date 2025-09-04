@@ -22,3 +22,13 @@ function _frame() {
 function success() { _frame "${GREEN}" "✅" "$1"; }
 function error()   { _frame "${RED}"   "❌" "$1"; }
 function info()    { _frame "${BLUE}"  "🚀" "$1"; }
+
+function ask() {
+  _frame "${YELLOW}" "❓" "$1 [y/N]"
+  read -rs -n1 response
+  if [[ "$response" =~ ^[yY]$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}

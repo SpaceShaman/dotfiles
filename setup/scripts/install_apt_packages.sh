@@ -8,6 +8,8 @@ success "Apt packages installed!"
 info "Setting up bat..."
 
 mkdir -p ~/.local/bin
-sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+if [ ! -e ~/.local/bin/bat ]; then
+  sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+fi
 
 success "Bat installed!"

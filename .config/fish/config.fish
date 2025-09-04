@@ -26,6 +26,7 @@ if status is-interactive
   export PATH="$PATH:/opt/nvim/"
   export ASDF_DATA_DIR="$HOME/.local/share/asdf"
   export PATH="$ASDF_DATA_DIR/shims:$PATH"
+  export PATH="$HOME/.local/share/pypoetry/bin:$PATH"
   export EDITOR=nvim
   export TERM=xterm-256color
   set -Ux PYENV_ROOT "$HOME/.pyenv"

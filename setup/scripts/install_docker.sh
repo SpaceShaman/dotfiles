@@ -7,7 +7,7 @@ if ask "Do you want to install Docker?"; then
   sudo chmod a+r /etc/apt/keyrings/docker.asc
 
   # Add the repository to Apt sources:
-  echo \
+  sudo echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -19,7 +19,7 @@ if ask "Do you want to install Docker?"; then
   # Manage Docker as a non-root user
   ##Create the docker group.
   if ! grep -q docker /etc/group; then
-      groupadd docker
+      sudo groupadd docker
   fi
 
   #Add your user to the docker group.

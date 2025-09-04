@@ -8,14 +8,17 @@ RESET='\033[0m'
 set -euo pipefail
 trap 'echo -e "\n${RED}$(date +%T) ${RESET}Script failed with error: $1"' ERR
 
-function success() {
-  echo -e "${BOLD}${GREEN}$1${RESET}"
+function _frame() {
+  local color="$1"
+  local icon="$2"
+  local msg="$3"
+  local len=$(( ${#msg} + 6 ))
+  local line=$(printf '━%.0s' $(seq 1 $len))
+  echo -e "${color}┏${line}┓${RESET}"
+  echo -e "${color}┃ ${icon} ${BOLD}${msg}${RESET}${color}  ┃${RESET}"
+  echo -e "${color}┗${line}┛${RESET}"
 }
 
-function error() {
-  echo -e "${BOLD}${RED}$1${RESET}"
-}
-
-function info() {
-  echo -e "${BOLD}${BLUE}$1${RESET}"
-}
+function success() { _frame "${GREEN}" "✅" "$1"; }
+function error()   { _frame "${RED}"   "❌" "$1"; }
+function info()    { _frame "${BLUE}"  "ℹ️" "$1"; }

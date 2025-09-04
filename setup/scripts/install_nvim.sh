@@ -9,5 +9,8 @@ if ask "Do you want to install Neovim?"; then
   sudo update-alternatives --install /usr/bin/vim vim /opt/nvim/nvim 60
   sudo update-alternatives --install /usr/bin/editor editor /opt/nvim/nvim 60
 
+  sudo rm -rf ~/.config/nvim
+  git clone https://github.com/SpaceShaman/nvim.git ~/.config/nvim
+  
   success "Neovim installed!"
 fi

@@ -7,7 +7,7 @@ if ask "Do you want to install Poetry and Pyenv?"; then
   sudo rm -rf $HOME/.pyenv
   sudo curl -fsSL https://pyenv.run | bash
 
-  fish -c 'set -Ux PYENV_ROOT $HOME/.pyenv && fish_add_path $PYENV_ROOT/bin'
+  fish -c 'set -Ux PYENV_ROOT $HOME/.pyenv; fish_add_path $PYENV_ROOT/bin'
 
   sudo curl -sSL https://install.python-poetry.org | python3 -
 

@@ -17,16 +17,10 @@ if ask "Do you want to install Docker?"; then
   sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
   # Manage Docker as a non-root user
-  ##Create the docker group.
   if ! grep -q docker /etc/group; then
       sudo groupadd docker
   fi
-
-  #Add your user to the docker group.
   sudo usermod -aG docker $USER
-
-  #Log out and log back in so that your group membership is re-evaluated.
-  sudo newgrp docker
 
   success "Docker installed!"
 fi

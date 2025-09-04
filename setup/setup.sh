@@ -9,6 +9,7 @@ info "Starting setup..."
 . scripts/install_nvim.sh
 . scripts/install_docker.sh
 . scripts/install_lazygit.sh
+. scripts/install_fisher_plugins.sh
 # . scripts/install_translate-shell.sh
 # . scripts/install_poetry_and_pyenv.sh
 # . scripts/install_uv.sh
@@ -16,6 +17,5 @@ info "Starting setup..."
 # . scripts/install_elixir.sh
 # . scripts/install_elixir_lsp.sh
 # . scripts/update_node_and_install_npm_packages.sh
-# . scripts/install_fisher_plugins.sh
 
 success "Setup complete!"

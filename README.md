@@ -10,15 +10,10 @@ This is my personal dotfiles repository.
 git clone https://github.com/SpaceShaman/dotfiles.git ~/.dotfiles
 ```
 
-### Enter to the dotfiles directory and symlink the files via stow
+### Enter to the setup directory and run setup script
 
 ```bash
-cd ~/.dotfiles
-stow .
+cd ~/.dotfiles/setup
+./setup.sh
 ```
 
-## Install dependencies
-
-```bash
-bash setup_scripts/setup.sh
-```

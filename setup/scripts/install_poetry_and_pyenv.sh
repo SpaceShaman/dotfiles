@@ -5,9 +5,9 @@ if ask "Do you want to install Poetry and Pyenv?"; then
       libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
   sudo rm -rf $HOME/.pyenv
-  sudo curl -fsSL https://pyenv.run | bash
+  curl -fsSL https://pyenv.run | bash
 
-  fish -c 'set -Ux PYENV_ROOT $HOME/.pyenv; fish_add_path $PYENV_ROOT/bin'
+  fish -c "set -Ux PYENV_ROOT '$HOME/.pyenv'; fish_add_path '$HOME/.pyenv/bin'"
 
   sudo curl -sSL https://install.python-poetry.org | python3 -
 

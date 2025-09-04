@@ -1,30 +1,21 @@
 #!/bin/bash
+source lib/common.sh
 
-set -e
-trap 'echo -e "${BOLD}${RED}Wystąpił błąd. Przerywam instalację.${RESET}"' ERR
+info "Starting setup..."
 
-BOLD='\033[1m'
-GREEN='\033[32m'
-YELLOW='\033[33m'
-RED='\033[31m'
-RESET='\033[0m'
+. scripts/install_apt_packages.sh
+. scripts/sync_dotfiles_with_system.sh
+. scripts/install_translate-shell.sh
+. scripts/install_usb_hdmi_drivers.sh
+. scripts/install_nvim.sh
+. scripts/install_docker.sh
+. scripts/install_lazygit.sh
+. scripts/install_poetry_and_pyenv.sh
+. scripts/install_uv.sh
+. scripts/install_asdf.sh
+. scripts/install_elixir.sh
+. scripts/install_elixir_lsp.sh
+. scripts/update_node_and_install_npm_packages.sh
+. scripts/install_fisher_plugins.sh
 
-echo -e "${BOLD}${GREEN}Starting setup...${RESET}"
-
-
-bash ./install_apt_packages.sh
-bash ./sync_dotfiles_with_system.sh
-bash ./install_translate-shell.sh
-# bash ./install_usb_hdmi_drivers.sh
-bash ./install_nvim.sh
-bash ./install_docker.sh
-bash ./install_lazygit.sh
-bash ./install_poetry_and_pyenv.sh
-bash ./install_uv.sh
-bash ./install_asdf.sh
-bash ./install_elixir.sh
-bash ./install_elixir_lsp.sh
-bash ./update_node_and_install_npm_packages.sh
-bash ./install_fisher_plugins.sh
-
-echo -e "${BOLD}${GREEN}Setup finished.${RESET}"
+success "Setup complete!"

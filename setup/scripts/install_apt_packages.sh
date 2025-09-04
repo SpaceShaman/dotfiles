@@ -1,6 +1,6 @@
 info "Installing apt packages..."
 
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip ripgrep fd-find bat stow rsync
 
 success "Apt packages installed!"

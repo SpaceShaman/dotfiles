@@ -1,15 +1,15 @@
-info "Installing apt packages..."
+if ask "Do you want to install apt packages?"; then
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install -y curl fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip ripgrep fd-find bat stow rsync
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip ripgrep fd-find bat stow rsync
+  success "Apt packages installed!"
 
-success "Apt packages installed!"
+  info "Setting up bat..."
 
-info "Setting up bat..."
+  mkdir -p ~/.local/bin
+  if [ ! -e ~/.local/bin/bat ]; then
+    sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+  fi
 
-mkdir -p ~/.local/bin
-if [ ! -e ~/.local/bin/bat ]; then
-  sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+  success "Bat installed!"
 fi
-
-success "Bat installed!"

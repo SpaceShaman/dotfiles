@@ -28,7 +28,7 @@ if status is-interactive
   export PATH="$ASDF_DATA_DIR/shims:$PATH"
   export EDITOR=nvim
   export TERM=xterm-256color
-  pyenv init - | source
+  pyenv init - fish | source
   autopy
   autoenv
 end

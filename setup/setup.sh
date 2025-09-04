@@ -4,7 +4,7 @@ source lib/common.sh
 info "Starting setup..."
 
 . scripts/install_apt_packages.sh
-# . scripts/sync_dotfiles_with_system.sh
+. scripts/sync_dotfiles_with_system.sh
 # . scripts/install_translate-shell.sh
 # . scripts/install_usb_hdmi_drivers.sh
 # . scripts/install_nvim.sh

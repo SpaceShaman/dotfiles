@@ -1,4 +1,5 @@
 if ask "Do you want to install Docker?"; then
+  info "Installing Docker..."
   # Add Docker's official GPG key:
   sudo apt update
   sudo apt install -y ca-certificates curl

@@ -1,4 +1,5 @@
 if ask "Do you want to setup Fish?"; then
+  info "Setting up Fish..."
   sudo chown -R $USER ~/.config/fish
   fish -c "fisher update"
   chsh -s $(which fish)

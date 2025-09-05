@@ -1,4 +1,5 @@
 if ask "Do you want to install asdf?"; then
+  info "Installing asdf..."
   ARCH=$(uname -m)
   [[ "$ARCH" == "x86_64" ]] && ARCH=amd64
   [[ "$ARCH" == "aarch64" ]] && ARCH=arm64

@@ -1,4 +1,5 @@
 if ask "Do you want to install Neovim?"; then
+  info "Installing Neovim..."
   sudo rm -rf /opt/nvim
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
   chmod u+x nvim-linux-x86_64.appimage

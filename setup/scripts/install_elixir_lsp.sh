@@ -1,4 +1,5 @@
 if ask "Do you want to install Elixir LSP?"; then
+  info "Installing Elixir LSP..."
   LATEST_URL=$(curl -s https://api.github.com/repos/elixir-lsp/elixir-ls/releases/latest \
     | jq -r '.assets[] | select(.name | test("elixir-ls.*\\.zip$")).browser_download_url')
   curl -L -o elixir-ls.zip $LATEST_URL

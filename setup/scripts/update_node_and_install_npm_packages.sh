@@ -1,17 +1,9 @@
-#!/bin/bash
+if ask "Do you want to update Node and install npm packages?"; then
+  npm install -g n
+  n lts
+  n prune
+  npm install -g npm@latest
 
-BOLD='\033[1m'
-GREEN='\033[32m'
-YELLOW='\033[33m'
-RESET='\033[0m'
-
-echo -e "${BOLD}${YELLOW}Updating Node and installing npm packages...${RESET}"
-
-npm install -g n
-n lts
-n prune
-npm install -g npm@latest
-
-npm install -g opencommit markdownlint-cli2
-
-echo -e "${BOLD}${GREEN}Node and npm packages updated.${RESET}"
+  npm install -g opencommit markdownlint-cli2
+  success "Node and npm packages updated!"
+fi

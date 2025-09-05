@@ -21,6 +21,9 @@ function error()   { _frame "${RED}"   "❌" "$1"; }
 function info()    { _frame "${BLUE}"  "🚀" "$1"; }
 
 function ask() {
+  if [[ "${SKIP_CONFIRMATIONS:-}" == "1" ]]; then
+    return 0
+  fi
   _frame "${YELLOW}" "❓" "$1 [y/N]"
   read -rs -n1 response
   if [[ "$response" =~ ^[yY]$ ]]; then

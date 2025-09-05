@@ -5,7 +5,6 @@ YELLOW='\033[33m'
 BLUE='\033[34m'
 RESET='\033[0m'
 
-
 function _frame() {
   local color="$1"
   local icon="$2"
@@ -21,9 +20,6 @@ function success() { _frame "${GREEN}" "✅" "$1"; }
 function error()   { _frame "${RED}"   "❌" "$1"; }
 function info()    { _frame "${BLUE}"  "🚀" "$1"; }
 
-set -euo pipefail
-trap 'error "Script failed!"' ERR
-
 function ask() {
   _frame "${YELLOW}" "❓" "$1 [y/N]"
   read -rs -n1 response
@@ -33,3 +29,6 @@ function ask() {
     return 1
   fi
 }
+
+set -euo pipefail
+trap 'error "Script failed!"' ERR

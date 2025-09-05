@@ -23,4 +23,8 @@ info "Starting setup..."
 . scripts/install_elixir.sh
 . scripts/install_elixir_lsp.sh
 
+if ask "Setup complete, do you want to restart your computer now?"; then
+  sudo shutdown -r now
+fi
+
 success "Setup complete!"

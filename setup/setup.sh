@@ -12,7 +12,7 @@ info "Starting setup..."
 . scripts/install_lazygit.sh
 . scripts/install_pyenv.sh
 . scripts/install_poetry.sh
-# . scripts/install_translate-shell.sh
+. scripts/install_translate-shell.sh
 # . scripts/install_uv.sh
 # . scripts/install_asdf.sh
 # . scripts/install_elixir.sh

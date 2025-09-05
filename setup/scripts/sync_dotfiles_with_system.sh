@@ -6,6 +6,6 @@ if ask "Do you want to sync dotfiles with system via stow?"; then
   success "Dotfiles synced with system!"
 
   info "Adding symlink to icons..."
-  sudo ln -s $HOME/.icons/Arc /usr/share/icons/Arc
+  sudo ln -sf $HOME/.icons/Arc /usr/share/icons/Arc
   success "Symlink to icons added!"
 fi

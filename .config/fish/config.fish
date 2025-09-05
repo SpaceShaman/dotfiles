@@ -31,6 +31,8 @@ if status is-interactive
   export TERM=xterm-256color
   set -Ux PYENV_ROOT "$HOME/.pyenv"
   set -Ux PATH "$PYENV_ROOT/bin:$PATH"
+  set -Ux PYENV_ROOT $HOME/.pyenv
+  test -d $PYENV_ROOT/bin; and fish_add_path $PYENV_ROOT/bin
   pyenv init - fish | source
   autopy
   autoenv

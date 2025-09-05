@@ -12,6 +12,4 @@ if ask "Do you want to sync dotfiles with system via stow?"; then
   info "Adding alternatives for python..."
   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
   success "Alternatives for python added!"
-
-  source ~/.bashrc
 fi

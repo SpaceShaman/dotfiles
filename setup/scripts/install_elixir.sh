@@ -5,7 +5,8 @@ if ask "Do you want to install Elixir and Erlang?"; then
   fi
 
   info "Installing Elixir and Erlang..."
-  source ~/.bashrc
+  export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+  export PATH="$ASDF_DATA_DIR/shims:$PATH"
   sudo apt -y install build-essential autoconf m4 libncurses-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils openjdk-21-jdk
   asdf plugin add erlang
   asdf plugin add elixir

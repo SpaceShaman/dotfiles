@@ -10,6 +10,6 @@ if ask "Do you want to install Elixir and Erlang?"; then
   asdf plugin update erlang
   asdf plugin update elixir
   asdf install erlang latest
-  asdf install elixir main-latest
+  asdf install elixir main
   success "Elixir and Erlang installed!"
 fi

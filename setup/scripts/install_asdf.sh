@@ -1,5 +1,7 @@
 if ask "Do you want to install asdf?"; then
   info "Installing asdf..."
+  sudo apt -y install build-essential autoconf m4 libncurses-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils openjdk-17-jdk
+
   ARCH=$(uname -m)
   [[ "$ARCH" == "x86_64" ]] && ARCH=amd64
   [[ "$ARCH" == "aarch64" ]] && ARCH=arm64

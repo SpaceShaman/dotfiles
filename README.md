@@ -32,15 +32,7 @@ To update your dotfiles to the latest version, run the following command:
 ```bash
 cd ~/.dotfiles/setup
 git pull
-```
-
-### Uninstall dotfiles
-
-To uninstall your dotfiles, run the following command:
-
-```bash
-cd ~/.dotfiles/setup
-./setup.sh -u
+./setup.sh -y
 ```
 
 ## License

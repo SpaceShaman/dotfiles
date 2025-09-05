@@ -9,13 +9,10 @@ if ask "Do you want to install asdf?"; then
     | head -n 1)
 
   curl -L -o asdf.tar.gz $LATEST_URL
-
   sudo rm -rf $HOME/.local/bin/asdf
-
   sudo mkdir -p $HOME/.local/bin
-
-  sudo tar -xzf asdf.tar.gz -C /home/ton618/.local/bin
-
+  sudo tar -xzf asdf.tar.gz -C $HOME/.local/bin
+  sudo chmod +x $HOME/.local/bin/asdf
   rm asdf.tar.gz
 
   success "asdf installed!"

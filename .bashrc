@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # nvim
-export PATH="$PATH:/opt/nvim/"
+export PATH="$HOME/.local/bin:/opt/nvim/:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

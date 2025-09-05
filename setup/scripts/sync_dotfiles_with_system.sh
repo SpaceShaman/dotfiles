@@ -8,4 +8,8 @@ if ask "Do you want to sync dotfiles with system via stow?"; then
   info "Adding symlink to icons..."
   sudo ln -sf $HOME/.icons/Arc /usr/share/icons/Arc
   success "Symlink to icons added!"
+
+  info "reload shell..."
+  exec $SHELL
+  success "Shell reloaded!"
 fi

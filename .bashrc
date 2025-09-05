@@ -124,6 +124,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
+# asdf
+export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 # run fish shell
 # export SHELL=`which sh`
 # fish

@@ -7,7 +7,6 @@ if ask "Do you want to install Elixir and Erlang?"; then
   info "Installing Elixir and Erlang..."
   asdf plugin add erlang
   asdf plugin add elixir
-  asdf update
   asdf plugin-update
   asdf install erlang latest
   asdf install elixir latest

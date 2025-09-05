@@ -18,6 +18,7 @@ if [ "$theme" = "dark" ]; then
     sed -i 's/gtk-application-prefer-dark-theme=1/gtk-application-prefer-dark-theme=0/' ~/.config/gtk-3.0/settings.ini
     # change theme to light in alacritty
     sed -i 's/dark/light/' ~/.config/alacritty/alacritty.yml
+    sed -i 's/dark/light/' ~/.config/alacritty/alacritty.toml
     # change rofi theme to light
     sed -i 's/theme "dark"/theme "light"/' ~/.config/rofi/config.rasi
     # change theme to light in vscode
@@ -34,6 +35,7 @@ else
     sed -i 's/gtk-application-prefer-dark-theme=0/gtk-application-prefer-dark-theme=1/' ~/.config/gtk-3.0/settings.ini
     # change alacritty theme to dark
     sed -i 's/light/dark/' ~/.config/alacritty/alacritty.yml
+    sed -i 's/light/dark/' ~/.config/alacritty/alacritty.toml
     # change rofi theme to dark
     sed -i 's/theme "light"/theme "dark"/' ~/.config/rofi/config.rasi
     # change theme to dark in vscode

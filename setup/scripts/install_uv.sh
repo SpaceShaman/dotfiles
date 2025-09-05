@@ -1,4 +1,4 @@
 if ask "Do you want to install UV?"; then
-  curl -LsSf https://astral.sh/uv/install.sh | sh
+  pip install uv
   success "UV installed!"
 fi

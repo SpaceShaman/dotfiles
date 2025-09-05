@@ -5,8 +5,6 @@ YELLOW='\033[33m'
 BLUE='\033[34m'
 RESET='\033[0m'
 
-set -euo pipefail
-trap 'echo -e "\n${RED}$(date +%T) ${RESET}Script failed with error: $1"' ERR
 
 function _frame() {
   local color="$1"
@@ -22,6 +20,9 @@ function _frame() {
 function success() { _frame "${GREEN}" "✅" "$1"; }
 function error()   { _frame "${RED}"   "❌" "$1"; }
 function info()    { _frame "${BLUE}"  "🚀" "$1"; }
+
+set -euo pipefail
+trap 'error "Script failed!"' ERR
 
 function ask() {
   _frame "${YELLOW}" "❓" "$1 [y/N]"

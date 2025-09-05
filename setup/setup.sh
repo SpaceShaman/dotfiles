@@ -17,6 +17,6 @@ info "Starting setup..."
 . scripts/install_asdf.sh
 . scripts/install_elixir.sh
 . scripts/install_elixir_lsp.sh
-# . scripts/install_uv.sh
+. scripts/install_uv.sh
 
 success "Setup complete!"

@@ -1,4 +1,4 @@
-if ask "Do you want to install asdf?"; then
+if ask "Do you want to install Elixir and Erlang?"; then
   if ! command -v asdf &> /dev/null; then
     info "asdf is not installed. Installing asdf..."
     . scripts/install_asdf.sh

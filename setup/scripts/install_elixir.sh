@@ -10,6 +10,8 @@ if ask "Do you want to install Elixir and Erlang?"; then
   asdf plugin update erlang
   asdf plugin update elixir
   asdf install erlang latest
-  asdf install elixir main
+  asdf set --home erlang latest
+  asdf install elixir 1.18.4
+  asdf set --home elixir 1.18.4
   success "Elixir and Erlang installed!"
 fi

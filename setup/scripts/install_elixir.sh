@@ -5,7 +5,7 @@ if ask "Do you want to install Elixir and Erlang?"; then
   fi
 
   info "Installing Elixir and Erlang..."
-  asdf plugin add erlang
+  asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
   asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
   asdf plugin update erlang
   asdf plugin update elixir

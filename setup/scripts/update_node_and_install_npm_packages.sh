@@ -5,6 +5,6 @@ if ask "Do you want to update Node and install npm packages?"; then
   sudo n prune
   sudo npm install -g npm@latest
 
-  sudo npm install -g opencommit markdownlint-cli2
+  sudo npm install -g opencommit markdownlint-cli2 @vue/language-server typescript 
   success "Node and npm packages updated!"
 fi

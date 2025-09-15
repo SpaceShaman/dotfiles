@@ -21,7 +21,7 @@ info "Starting setup..."
 . scripts/update_node_and_install_npm_packages.sh
 . scripts/install_asdf.sh
 . scripts/install_elixir.sh
-. scripts/install_elixir_lsp.sh
+. scripts/install_elixir_ls.sh
 
 if ask "Setup complete, do you want to restart your computer now?"; then
   sudo shutdown -r now

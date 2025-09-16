@@ -6,7 +6,7 @@ if status is-interactive
   alias g=sgpt
   alias c=oco
   alias w=wifi
-  alias p=python
+  alias p=python3
   alias v=nvim
   alias vim=nvim
   alias cat=batcat

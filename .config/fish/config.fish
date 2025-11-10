@@ -29,4 +29,5 @@ if status is-interactive
   export PATH="$HOME/.local/share/pypoetry/bin:$PATH"
   export EDITOR=nvim
   export TERM=xterm-256color
+  export ZK_NOTEBOOK_DIR="$HOME/notes"
 end

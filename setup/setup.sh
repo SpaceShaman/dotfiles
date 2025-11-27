@@ -15,6 +15,7 @@ info "Starting setup..."
 . scripts/install_docker.sh
 . scripts/install_lazygit.sh
 . scripts/install_uv.sh
+. scripts/install_python_tools.sh
 . scripts/install_translate-shell.sh
 . scripts/update_node_and_install_npm_packages.sh
 . scripts/install_asdf.sh

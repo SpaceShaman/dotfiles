@@ -7,6 +7,11 @@ if status is-interactive
   alias c=oco
   alias w=wifi
   alias b=bluetoothctl
+  # Connect to Headphones
+  alias bh='b power off && b power on && b connect F4:0E:11:78:E7:F3'
+  # Connect to Speaker
+  alias bs='b power off && b power on && b connect 00:02:3C:65:84:E1'
+  alias bd='b disconnect'
   alias p=python3
   alias v=nvim
   alias vim=nvim

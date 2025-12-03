@@ -6,6 +6,7 @@ if status is-interactive
   alias g=sgpt
   alias c=oco
   alias w=wifi
+  alias b=bluetoothctl
   alias p=python3
   alias v=nvim
   alias vim=nvim

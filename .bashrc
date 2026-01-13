@@ -128,6 +128,9 @@ eval "$(pyenv init - bash)"
 export ASDF_DATA_DIR="$HOME/.local/share/asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
 # run fish shell
 # export SHELL=`which sh`
 # fish

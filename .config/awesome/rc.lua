@@ -369,12 +369,4 @@ awful.spawn.with_shell 'xset +dpms && xset s on && xset s 300'
 -- Setup displays
 awful.spawn.with_shell 'bash /home/ton618/.scripts/screen.sh -r'
 
-local function center_mouse()
-  local total_width = 0
-  for s in screen do
-    total_width = total_width + s.geometry.width
-  end
-  root.fake_input('motion_notify', false, total_width / 2, screen.primary.geometry.height / 2)
-end
-
-center_mouse()
+root.fake_input('motion_notify', false, screen.primary.geometry.width - 100, screen.primary.geometry.height / 2)

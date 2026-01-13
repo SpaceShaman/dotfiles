@@ -2,7 +2,7 @@ import:
   - ~/.config/alacritty/themes/dark.yml
 
 font:
-  size: 16
+  size: 16.5
 
 normal:
   family: "Hack Nerd Font Propo"

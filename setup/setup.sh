@@ -18,9 +18,9 @@ info "Starting setup..."
 . scripts/install_python_tools.sh
 . scripts/install_translate-shell.sh
 . scripts/update_node_and_install_npm_packages.sh
-. scripts/install_asdf.sh
-. scripts/install_elixir.sh
-. scripts/install_elixir_ls.sh
+# . scripts/install_asdf.sh
+# . scripts/install_elixir.sh
+# . scripts/install_elixir_ls.sh
 . scripts/install_hadolint.sh
 . scripts/install_zk.sh
 

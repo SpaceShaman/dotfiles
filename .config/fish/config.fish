@@ -15,7 +15,6 @@ if status is-interactive
   alias p=python3
   alias v=nvim
   alias vim=nvim
-  alias cat=batcat
   alias l=lazygit
   alias cp='rsync -ah --info=progress2'
   alias mv='rsync -ah --info=progress2 --remove-source-files'

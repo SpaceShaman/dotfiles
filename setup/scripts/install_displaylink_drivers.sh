@@ -5,5 +5,9 @@ if ask "Do you want to install DisplayLink drivers?"; then
   sudo ./displaylink-debian.sh
   cd ..
   rm -rf displaylink-debian
+
+  dl_conf="/etc/X11/xorg.conf.d/20-displaylink.conf"
+  [ -f "$dl_conf" ] && sudo mv "$dl_conf" "${dl_conf}.bak"
+
   success "DisplayLink USB HDMI drivers installed!"
 fi

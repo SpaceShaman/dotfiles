@@ -257,7 +257,8 @@ awful.screen.connect_for_each_screen(function(s)
       wibox.widget.textbox ' | ',
       volume_widget {
         widget_type = 'icon_and_text',
-        card = 0,
+        card = 1,
+        device = 'default',
       },
       wibox.widget.textbox ' | ',
       battery_widget {

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SCREEN_PRIMARY="DVI-I-1-1"
+SCREEN_PRIMARY="DVI-I-2-2"
 SCREEN_PRIMARY_MODE="2560x1440"
 SCREEN_PRIMARY_RATE="120.00"
-SCREEN_LEFT="DVI-I-2-2"
+SCREEN_LEFT="DVI-I-1-1"
 SCREEN_LEFT_MODE="2560x1440"
 SCREEN_LEFT_RATE="120.00"
 SCREEN_BOTTOM="eDP-1"
@@ -24,7 +24,7 @@ elif [ $1 = "-n" ] || [ $1 = "--normal" ]; then
 
 elif [ $1 = "-r" ] || [ $1 = "--rotate" ]; then
     xrandr \
-        --output $SCREEN_PRIMARY --mode $SCREEN_PRIMARY_MODE --rate $SCREEN_PRIMARY_RATE --primary --pos 1440x160 \
+        --output $SCREEN_PRIMARY --rotate normal --mode $SCREEN_PRIMARY_MODE --rate $SCREEN_PRIMARY_RATE --primary --pos 1440x160 \
         --output $SCREEN_LEFT --rotate left --mode $SCREEN_LEFT_MODE --rate $SCREEN_LEFT_RATE --left-of $SCREEN_PRIMARY --pos 0x0 \
         --output $SCREEN_BOTTOM --mode $SCREEN_BOTTOM_MODE --rate $SCREEN_BOTTOM_RATE --below $SCREEN_PRIMARY
 

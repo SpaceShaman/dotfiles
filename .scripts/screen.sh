@@ -1,8 +1,8 @@
 #!/bin/bash
 
+CONFIG_PATH="$HOME/.config/screen.conf"
 # Load screen configuration
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/screen.conf"
+source "$CONFIG_PATH"
 
 if [ $# -eq 0 ]; then
     echo -e "\033[1;31mUse: screen -n or --normal to set the screen to normal mode.\033[0m"
@@ -39,16 +39,15 @@ elif [ $1 = "-a" ] || [ $1 = "--auto" ]; then
     fi
 
 elif [ $1 = "-f" ] || [ $1 = "--fix" ]; then
-    CONFIG_FILE="$SCRIPT_DIR/screen.conf"
     TEMP=$(mktemp)
     
-    TEMP_PRIMARY=$(grep "^SCREEN_PRIMARY=" "$CONFIG_FILE" | cut -d'"' -f2)
-    TEMP_LEFT=$(grep "^SCREEN_LEFT=" "$CONFIG_FILE" | cut -d'"' -f2)
+    TEMP_PRIMARY=$(grep "^SCREEN_PRIMARY=" "$CONFIG_PATH" | cut -d'"' -f2)
+    TEMP_LEFT=$(grep "^SCREEN_LEFT=" "$CONFIG_PATH" | cut -d'"' -f2)
     
-    sed "s/^SCREEN_PRIMARY=\".*\"/SCREEN_PRIMARY=\"$TEMP_LEFT\"/" "$CONFIG_FILE" | \
+    sed "s/^SCREEN_PRIMARY=\".*\"/SCREEN_PRIMARY=\"$TEMP_LEFT\"/" "$CONFIG_PATH" | \
     sed "s/^SCREEN_LEFT=\".*\"/SCREEN_LEFT=\"$TEMP_PRIMARY\"/" > "$TEMP"
     
-    mv "$TEMP" "$CONFIG_FILE"
+    mv "$TEMP" "$CONFIG_PATH"
     echo "Swapped primary and left monitors in configuration."
 fi
 

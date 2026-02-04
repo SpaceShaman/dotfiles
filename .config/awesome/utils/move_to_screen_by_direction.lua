@@ -5,6 +5,15 @@ return function(direction, c)
   local screen_right = 'DVI-I-1-1'
   local screen_bottom = 'eDP-1'
 
+  -- Load from config file
+  local f = io.open(os.getenv 'HOME' .. '/.config/screen.conf', 'r')
+  if f then
+    local content = f:read '*all'
+    f:close()
+    screen_right = content:match 'SCREEN_PRIMARY="([^"]+)"' or screen_right
+    screen_left = content:match 'SCREEN_LEFT="([^"]+)"' or screen_left
+  end
+
   local current_screen = awful.screen.focused()
   for k, v in pairs(current_screen.outputs) do
     if direction == 'left' then

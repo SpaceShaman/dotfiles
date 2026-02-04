@@ -1,20 +1,15 @@
 #!/bin/bash
 
-SCREEN_PRIMARY="DVI-I-1-1"
-SCREEN_PRIMARY_MODE="2560x1440"
-SCREEN_PRIMARY_RATE="120.00"
-SCREEN_LEFT="DVI-I-2-2"
-SCREEN_LEFT_MODE="2560x1440"
-SCREEN_LEFT_RATE="120.00"
-SCREEN_BOTTOM="eDP-1"
-SCREEN_BOTTOM_MODE="1920x1080"
-SCREEN_BOTTOM_RATE="60.16"
+# Load screen configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/screen.conf"
 
 if [ $# -eq 0 ]; then
     echo -e "\033[1;31mUse: screen -n or --normal to set the screen to normal mode.\033[0m"
     echo -e "\033[1;31mUse: screen -r or --rotate to set left screen to rotate mode.\033[0m"
     echo -e "\033[1;31mUse: screen -d or --duplicate to set all screens to duplicate mode.\033[0m"
     echo -e "\033[1;31mUse: screen -a or --auto to toggle screen auto off.\033[0m"
+    echo -e "\033[1;31mUse: screen -f or --fix to swap primary and left monitors in config.\033[0m"
 
 elif [ $1 = "-n" ] || [ $1 = "--normal" ]; then
     xrandr \
@@ -42,5 +37,18 @@ elif [ $1 = "-a" ] || [ $1 = "--auto" ]; then
         xset s 300
         echo "Screen auto off enabled"
     fi
+
+elif [ $1 = "-f" ] || [ $1 = "--fix" ]; then
+    CONFIG_FILE="$SCRIPT_DIR/screen.conf"
+    TEMP=$(mktemp)
+    
+    TEMP_PRIMARY=$(grep "^SCREEN_PRIMARY=" "$CONFIG_FILE" | cut -d'"' -f2)
+    TEMP_LEFT=$(grep "^SCREEN_LEFT=" "$CONFIG_FILE" | cut -d'"' -f2)
+    
+    sed "s/^SCREEN_PRIMARY=\".*\"/SCREEN_PRIMARY=\"$TEMP_LEFT\"/" "$CONFIG_FILE" | \
+    sed "s/^SCREEN_LEFT=\".*\"/SCREEN_LEFT=\"$TEMP_PRIMARY\"/" > "$TEMP"
+    
+    mv "$TEMP" "$CONFIG_FILE"
+    echo "Swapped primary and left monitors in configuration."
 fi
 

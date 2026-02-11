@@ -22,6 +22,7 @@ info "Starting setup..."
 . scripts/install_zk.sh
 . scripts/install_teams.sh
 . scripts/install_bruno.sh
+. scripts/install_bespokesynth.sh
 # . scripts/install_asdf.sh
 # . scripts/install_elixir.sh
 # . scripts/install_elixir_ls.sh

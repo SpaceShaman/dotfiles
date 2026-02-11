@@ -21,7 +21,7 @@ if status is-interactive
   alias t='trans -b :en'
   alias tp='trans -b :pl'
   alias s=screen
-  alias co='code .; exit'
+  alias d='docker compose'
   alias release='bash ~/.scripts/release.sh'
   alias update='bash ~/.scripts/update.sh'
   alias theme='bash ~/.scripts/theme.sh'

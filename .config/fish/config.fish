@@ -24,6 +24,7 @@ if status is-interactive
   alias d='docker compose'
   alias du='docker compose up'
   alias dd='docker compose down'
+  alias dr='docker compose restart'
   alias release='bash ~/.scripts/release.sh'
   alias update='bash ~/.scripts/update.sh'
   alias theme='bash ~/.scripts/theme.sh'

@@ -22,9 +22,12 @@ if status is-interactive
   alias tp='trans -b :pl'
   alias s=screen
   alias d='docker compose'
-  alias du='docker compose up'
+  alias du='docker compose up -d'
   alias dd='docker compose down'
   alias dr='docker compose restart'
+  alias dev='docker compose -f docker-compose.dev.yml up -d'
+  alias devd='docker compose -f docker-compose.dev.yml down'
+  alias devr='docker compose -f docker-compose.dev.yml restart'
   alias release='bash ~/.scripts/release.sh'
   alias update='bash ~/.scripts/update.sh'
   alias theme='bash ~/.scripts/theme.sh'

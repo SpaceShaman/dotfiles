@@ -33,6 +33,7 @@ if status is-interactive
   alias theme='bash ~/.scripts/theme.sh'
   alias wifi='bash ~/.scripts/wifi.sh'
   alias screen='bash ~/.scripts/screen.sh'
+  alias rss='d -f ~/rss/docker-compose.yml up -d && firefox "localhost:666"'
   export PYTHONSTARTUP=$HOME/.config/pythonstartup
   export PATH="$PATH:/opt/nvim/"
   export ASDF_DATA_DIR="$HOME/.local/share/asdf"

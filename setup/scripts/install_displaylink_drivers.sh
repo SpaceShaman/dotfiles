@@ -1,6 +1,8 @@
 if ask "Do you want to install DisplayLink drivers?"; then
   info "Installing DisplayLink USB HDMI drivers..."
-  git clone https://github.com/AdnanHodzic/displaylink-debian.git
+  if [ ! -d "displaylink-debian" ]; then
+    git clone https://github.com/AdnanHodzic/displaylink-debian.git
+  fi
   cd displaylink-debian
   sudo ./displaylink-debian.sh
   cd ..

@@ -2,7 +2,7 @@ if status is-interactive
   set fish_greeting
   fzf_configure_bindings --variables=\e\cv --directory=\cf
   set --universal pure_enable_single_line_prompt true
-  set PATH "$HOME/.local/bin:$PATH"
+  set PATH "$HOME/.local/bin:$PATH:$HOME/.scripts"
   alias g=sgpt
   alias c=oco
   alias w=wifi
@@ -28,11 +28,6 @@ if status is-interactive
   alias dev='docker compose -f docker-compose.dev.yml up -d'
   alias devd='docker compose -f docker-compose.dev.yml down'
   alias devr='docker compose -f docker-compose.dev.yml restart'
-  alias release='bash ~/.scripts/release.sh'
-  alias update='bash ~/.scripts/update.sh'
-  alias theme='bash ~/.scripts/theme.sh'
-  alias wifi='bash ~/.scripts/wifi.sh'
-  alias screen='bash ~/.scripts/screen.sh'
   export PYTHONSTARTUP=$HOME/.config/pythonstartup
   export PATH="$PATH:/opt/nvim/"
   export ASDF_DATA_DIR="$HOME/.local/share/asdf"

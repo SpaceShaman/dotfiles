@@ -362,12 +362,12 @@ awful.spawn.with_shell 'compton'
 awful.spawn '/usr/libexec/gsd-xsettings'
 
 -- Set brightness permission
-awful.spawn.with_shell 'bash /home/ton618/.scripts/set_brightness_permission.sh'
+awful.spawn.with_shell '/home/ton618/.scripts/set_brightness_permission'
 
 -- Set screen auto off time to 5 minutes
 awful.spawn.with_shell 'xset +dpms && xset s on && xset s 300'
 
 -- Setup displays
-awful.spawn.with_shell 'bash /home/ton618/.scripts/screen.sh -r'
+awful.spawn.with_shell '/home/ton618/.scripts/screen -r'
 
 root.fake_input('motion_notify', false, screen.primary.geometry.width - 100, screen.primary.geometry.height / 2)

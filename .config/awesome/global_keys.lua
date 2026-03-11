@@ -283,6 +283,13 @@ local global_keys = {
       awful.spawn '/home/ton618/.scripts/screenshot --full'
     end,
   },
+  {
+    modkeys = { MODKEY },
+    key = 'p',
+    action = function()
+      awful.spawn '/home/ton618/.scripts/powermenu'
+    end,
+  },
 }
 
 return bind_key_numbers_to_tags(get_keys_table(global_keys), MODKEY)

@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Rss
-Exec=/home/ton618/.scripts/rss.sh
+Exec=/home/ton618/.scripts/rss
 Type=Application
 Categories=Utility;

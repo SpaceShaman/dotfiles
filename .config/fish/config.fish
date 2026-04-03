@@ -13,6 +13,7 @@ if status is-interactive
   alias bs='b power off && b power on && b connect 00:02:3C:65:84:E1'
   alias bd='b disconnect'
   alias p=python3
+  alias pt=ptpython
   alias v=nvim
   alias vim=nvim
   alias l=lazygit

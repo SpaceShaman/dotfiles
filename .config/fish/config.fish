@@ -28,7 +28,6 @@ if status is-interactive
   alias dev='docker compose -f docker-compose.dev.yml up -d'
   alias devd='docker compose -f docker-compose.dev.yml down'
   alias devr='docker compose -f docker-compose.dev.yml restart'
-  export PYTHONSTARTUP=$HOME/.config/pythonstartup
   export PATH="$PATH:/opt/nvim/"
   export ASDF_DATA_DIR="$HOME/.local/share/asdf"
   export PATH="$ASDF_DATA_DIR/shims:$PATH"

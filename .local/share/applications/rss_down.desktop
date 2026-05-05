@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Rss down
+Exec=/home/ton618/.scripts/rss_down
+Type=Application
+Categories=Utility;

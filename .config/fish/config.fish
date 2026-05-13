@@ -5,7 +5,7 @@ if status is-interactive
   set PATH "$HOME/.local/bin:$PATH:$HOME/.scripts"
   alias g=sgpt
   alias c=oco
-  alias w=wifi
+  alias w=wifitui
   alias b=bluetoothctl
   # Connect to Headphones
   alias bh='b power off && b power on && b connect F4:0E:11:78:E7:F3'

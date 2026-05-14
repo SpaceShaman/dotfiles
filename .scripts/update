@@ -12,8 +12,8 @@ if [ "$app_name" != "warehouse" ] && [ "$app_name" != "connect" ] && [ "$app_nam
 fi
 
 if [ "$app_name" = "connect" ] || [ "$app_name" = "frontend" ] || [ "$app_name" = "auth" ] || [ "$app_name" = "analytics" ]; then
-    ssh krzysztofs@146.59.126.189 "cd core/$app_name && git pull && cd .. && docker-compose down $app_name && docker-compose build $app_name && docker-compose up -d $app_name && docker system prune -f"
+    ssh quadra "cd core/$app_name && git pull && cd .. && docker-compose down $app_name && docker-compose build $app_name && docker-compose up -d $app_name && docker system prune -f"
 else
-    ssh krzysztofs@146.59.126.189 "cd $app_name && git pull && docker-compose down && docker-compose build && docker-compose up -d && docker system prune -f"
+    ssh quadra "cd $app_name && git pull && docker-compose down && docker-compose build && docker-compose up -d && docker system prune -f"
 fi
 echo -e "\033[1;32mUpdate to the new version done.\033[0m"

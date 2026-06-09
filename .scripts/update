@@ -11,7 +11,7 @@ if [ "$app_name" != "warehouse" ] && [ "$app_name" != "connect" ] && [ "$app_nam
     exit 1
 fi
 
-if [ "$app_name" = "connect" ] || [ "$app_name" = "frontend" ] || [ "$app_name" = "auth" ] || [ "$app_name" = "analytics" ]; then
+if [ "$app_name" = "connect" ] || [ "$app_name" = "frontend" ] || [ "$app_name" = "auth" ] || [ "$app_name" = "analytics" ] || [ "$app_name" = "warehouse" ]; then
     ssh quadra "cd core/$app_name && git pull && cd .. && docker-compose down $app_name && docker-compose build $app_name && docker-compose up -d $app_name && docker system prune -f"
 else
     ssh quadra "cd $app_name && git pull && docker-compose down && docker-compose build && docker-compose up -d && docker system prune -f"

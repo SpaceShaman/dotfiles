@@ -12,6 +12,8 @@ if status is-interactive
   # Connect to Speaker
   alias bs='b power off && b power on && b connect 00:02:3C:65:84:E1'
   alias bd='b disconnect'
+  # Restart Pipewire
+  alias pw='systemctl --user restart wireplumber pipewire pipewire-pulse'
   alias p=python3
   alias pt=ptpython
   alias v=nvim

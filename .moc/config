@@ -1,2 +1,3 @@
-Theme = green_theme_local
-Keymap = keymap
+Theme       = green_theme_local
+Keymap      = keymap
+MusicDir    = /home/ton618/box/Muzyka

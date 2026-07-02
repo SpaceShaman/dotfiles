@@ -1,3 +1,5 @@
 .config/fish/*
 displaylink-debian
 .moc/*
+!.moc/themes/
+!.moc/themes/green_theme_local

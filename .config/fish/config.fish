@@ -31,6 +31,8 @@ if status is-interactive
   alias dev='docker compose -f docker-compose.dev.yml up -d'
   alias devd='docker compose -f docker-compose.dev.yml down'
   alias devr='docker compose -f docker-compose.dev.yml restart'
+  alias box='rclone mount box: ~/box --vfs-cache-mode full --daemon'
+  alias unbox='fusermount -u ~/box'
   export PATH="$PATH:/opt/nvim/"
   export ASDF_DATA_DIR="$HOME/.local/share/asdf"
   export PATH="$ASDF_DATA_DIR/shims:$PATH"

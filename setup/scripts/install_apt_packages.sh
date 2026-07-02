@@ -1,7 +1,7 @@
 if ask "Do you want to install apt packages?"; then
   info "Installing apt packages..."
   sudo apt update && sudo apt upgrade -y
-  sudo apt install -y curl fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip ripgrep fd-find bat stow rsync tmux python3.13-venv fzf autorandr
+  sudo apt install -y curl fish git wget htop moc alacritty mc nodejs npm awesome compton rofi light pavucontrol playerctl scrot xclip ripgrep fd-find bat stow rsync tmux python3.13-venv fzf autorandr rclone
   success "Apt packages installed!"
 
   info "Setting up bat..."

@@ -10,7 +10,9 @@ if status is-interactive
   # Connect to Headphones
   alias bh='b power off && b power on && b connect F4:0E:11:78:E7:F3'
   # Connect to Speaker
-  alias bs='b power off && b power on && b connect 00:02:3C:65:84:E1'
+  alias bs='b power off && b power on && b connect 08:F0:B6:F6:1C:C5'
+  # Connect to small speaker
+  alias bss='b power off && b power on && b connect 00:02:3C:65:84:E1'
   alias bd='b disconnect'
   # Restart Pipewire
   alias pw='systemctl --user restart wireplumber pipewire pipewire-pulse'

@@ -1,0 +1,37 @@
+- name: Configure my amazing workstation
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Install system packages
+      ansible.builtin.apt:
+        state: present
+        update_cache: true
+        name:
+          - curl
+          - fish
+          - git
+          - wget
+          - htop
+          - moc
+          - alacritty
+          - mc
+          - nodejs
+          - npm
+          - awesome
+          - compton
+          - rofi
+          - light
+          - pavucontrol
+          - playerctl
+          - scrot
+          - xclip
+          - ripgrep
+          - fd-find
+          - bat
+          - stow
+          - rsync
+          - tmux
+          - python3.13-venv
+          - fzf
+          - autorandr
+          - rclone

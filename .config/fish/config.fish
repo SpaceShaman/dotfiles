@@ -2,7 +2,7 @@ if status is-interactive
   set fish_greeting
   fzf_configure_bindings --variables=\e\cv --directory=\cf
   set --universal pure_enable_single_line_prompt true
-  set PATH "$HOME/.local/bin:$PATH:$HOME/.scripts"
+  set PATH "/usr/sbin:$HOME/.local/bin:$PATH:$HOME/.scripts"
   alias g=sgpt
   alias c=oco
   alias w=wifitui

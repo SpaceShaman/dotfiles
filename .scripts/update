@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# get the last directory name from the path of actual, if is "app" then get the parent directory
-# if is not "holidays", "warehouse" or "ql_connect" then exit
-app_name=$(basename $(pwd))
-if [ "$app_name" = "app" ]; then
-    app_name=$(basename $(dirname $(pwd)))
-fi
-if [ "$app_name" != "warehouse" ] && [ "$app_name" != "connect" ] && [ "$app_name" != "analytics" ] && [ "$app_name" != "frontend" ] && [ "$app_name" != "auth" ] && [ "$app_name" != "core" ]; then
-    echo -e "\033[1;31mYou are not in the correct directory to update the app.\033[0m"
-    exit 1
+# Use the parent directory name when running from an app subdirectory.
+app_name=$(basename "$PWD")
+if [[ $app_name == app ]]; then
+    app_name=$(basename "$(dirname "$PWD")")
 fi
 
-if [ "$app_name" = "connect" ] || [ "$app_name" = "frontend" ] || [ "$app_name" = "auth" ] || [ "$app_name" = "analytics" ] || [ "$app_name" = "warehouse" ]; then
-    ssh quadra "cd core/$app_name && git pull && cd .. && docker compose down $app_name && docker compose build $app_name && docker compose up -d $app_name && docker system prune -f"
-else
-    ssh quadra "cd $app_name && git pull && docker compose down && docker compose build && docker compose up -d && docker image prune -f"
-fi
-echo -e "\033[1;32mUpdate to the new version done.\033[0m"
+case $app_name in
+    warehouse | connect | analytics | frontend | auth | partfinder)
+        ssh quadra "cd core/$app_name && git pull && cd .. && docker compose down $app_name && docker compose build $app_name && docker compose up -d $app_name && docker system prune -f"
+        ;;
+    core)
+        ssh quadra "cd core && git pull && docker compose down && docker compose build && docker compose up -d && docker image prune -f"
+        ;;
+    *)
+        printf '\033[1;31mYou are not in the correct directory to update the app.\033[0m\n'
+        exit 1
+        ;;
+esac
+
+printf '\033[1;32mUpdate to the new version done.\033[0m\n'
